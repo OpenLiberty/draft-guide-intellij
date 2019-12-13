@@ -156,6 +156,10 @@ changes were automatically picked up.
 Check out the service that you created at the
 http://localhost:9080/LibertyProject/System/properties[^] URL.
 
+== Debugging feature
+
+TODO
+
 == Testing the service
 
 You can test this service manually by starting a server and pointing a web browser at the
