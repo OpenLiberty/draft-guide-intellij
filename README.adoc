@@ -25,11 +25,11 @@
 [.hidden]
 NOTE: This repository contains the guide documentation source. To view the guide in published form, view it on the https://openliberty.io/guides/{projectid}.html[Open Liberty website].
 
-Learn how to create a REST service with Open Liberty with IntelliJ.
+Learn how to create a REST service on Open Liberty with IntelliJ.
 
 == What you'll learn
 
-You will learn how to get started with IntelliJ by building and testing a simple REST service, which will expose
+You will learn how to get started with IntelliJ by building and testing a simple REST service which will expose
 the JVM's system properties. The REST service will respond to `GET` requests made to the
 `\http://localhost:9080/LibertyProject/System/properties` URL.
 
@@ -38,7 +38,7 @@ This guide is similar to https://openliberty.io/guides/rest-intro.html#creating-
 
 == Installing and configuring IntelliJ
 
-If IntelliJ isn't installed, download and install it on your machine. The free community edition should suffice for this
+If IntelliJ isn't installed, download and install it on your machine. The free community edition will suffice for this
 guide.
 
 include::{common-includes}/os-tabs.adoc[]
@@ -62,7 +62,7 @@ https://www.jetbrains.com/idea/download/#section=linux[^]
 == Getting started
 
 Launch IntelliJ and select `Get from Version Control` and paste the following in the `URL` field:
-`https://github.com/meswan/guide-IntelliJ.git[^]` and select `Clone`.
+`https://github.com/OpenLiberty/guide-IntelliJ.git[^]` and select `Clone`.
 
 Make a note of the directory path that the project is being cloned to.
 
@@ -72,7 +72,6 @@ Project from external model`, select `Maven` and click on `Finish`.
 You should see a progress bar indicating the status of the operation. Click on `Open` on the welcome screen and
 navigate to the directory that the project was saved and select `Ok`. On the top left hand side of the screen,
 expand the `guide-{projectid}` project.
-
 
 The `start` directory contains the starting project that you will build upon.
 
@@ -90,12 +89,12 @@ For the `Name` and in `Command line` field, put `liberty:run`.
 
 For the `Working directory` field, select the path or navigate to the `finish` directory. 
 
-Click the `+` button at the top-left in the `Run/Debug Configurations` pop up window. Select `Maven`
+Once again, click the `+` button at the top-left in the `Run/Debug Configurations` pop up window. Select `Maven`
 in `Add new configuration`.
 
 For the `Name` and in `Command line` field, put `liberty:stop`.
 
-Click the `+` button at the top-left in the `Run/Debug Configurations` pop up window. Select `Maven`
+Finally, click the `+` button at the top-left in the `Run/Debug Configurations` pop up window. Select `Maven`
 in `Add new configuration`.
 
 For the `Name` and in `Command line` field, put `liberty:dev`.
@@ -111,14 +110,14 @@ The `finish` directory in the root of this guide contains the finished applicati
 To try out the application, you can select `Run` in the menu bar and click `Run...`. Select `liberty:run`
 in the pop up window and deploy it to Open Liberty.
 
-The tool window will be activated by default displaying a CLI allowing you to follow the progress of the build.
+The tool window will be activated by default displaying a console which allows you to follow the progress of the build.
 
 Check out the service at the
 http://localhost:9080/LibertyProject/System/properties[^] URL.
 
 Select `Run` in the menu bar and click `Run...` and then select `liberty:stop` in the pop up window.
 
-You can also use the icons on the toolbar to quickly toggle between the different configurations that was set up
+You can also use the icons on the toolbar to toggle quickly between the different configurations that were set up
 above.
 
 == Creating the application
@@ -131,7 +130,7 @@ Open Liberty server in development mode and will listen for file changes.
 
 == Configuring the server
 
-To get the service running, the Liberty server needs to be correctly configured.
+To get the service running, the Open Liberty server needs to be correctly configured.
 
 [role="code_command hotspot", subs="quotes"]
 ----
@@ -155,7 +154,19 @@ http://localhost:9080/LibertyProject/System/properties[^] URL.
 
 == Debugging feature
 
-TODO
+You may wish to debug the program. After you run `liberty:dev` you can attach the IntelliJ debugger to the Open Liberty
+process.
+
+From the menu bar, select `Run` and click `Edit Configurations`. Click the `+` button at the top-left in the
+`Run/Debug Configurations` pop up window. Select `Remote` in `Add new configuration`. Type 7777 into
+the Port field and click OK to start the debugger.
+
+Open the class `PropertiesResource` in the editor and click in the margin on the first line of the method
+`getProperties()`. This will set a breakpoint on that line.
+
+Now refresh the browser at the http://localhost:9080/LibertyProject/System/properties[^] URL. The server will stop at
+the breakpoint you set and you can examine the state of your JVM. Click Resume Program to continue testing your
+application.
 
 == Testing the service
 
