@@ -64,7 +64,7 @@ https://www.jetbrains.com/idea/download/#section=linux[^]
 Launch IntelliJ and select `Get from Version Control` and paste the following in the `URL` field:
 `https://github.com/meswan/guide-IntelliJ.git[^]` and select `Clone`.
 
-IMPORTANT: Make a note of the directory path that the project is being cloned to.
+Make a note of the directory path that the project is being cloned to.
 
 When prompted if you would like to create a project, select `Yes`. On the `Import Project` dialog, choose `Import
 Project from external model`, select `Maven` and click on `Finish`.
@@ -78,7 +78,7 @@ The `start` directory contains the starting project that you will build upon.
 
 The `finish` directory contains the finished project that you will build.
 
-NOTE: At the bottom right of the IDE, click on `Terminal` to bring up the console if needed. By default, it should start
+At the bottom right of the IDE, click on `Terminal` to bring up the console if needed. By default, it should start
 in the `guide-{projectid}` directory.
 
 == Configure the build project
@@ -118,7 +118,7 @@ http://localhost:9080/LibertyProject/System/properties[^] URL.
 
 Select `Run` in the menu bar and click `Run...` and then select `liberty:stop` in the pop up window.
 
-NOTE: You can also use the icons on the toolbar to quickly toggle between the different configurations that was set up
+You can also use the icons on the toolbar to quickly toggle between the different configurations that was set up
 above.
 
 == Creating the application
