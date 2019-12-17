@@ -155,14 +155,15 @@ http://localhost:9080/LibertyProject/System/properties[^] URL.
 == Debugging feature
 
 You may wish to debug the program. After you run `liberty:dev` you can attach the IntelliJ debugger to the Open Liberty
-process.
+process. If the debugger does not attach verify that you are running `liberty:dev` and not `liberty:run`.
 
 From the menu bar, select `Run` and click `Edit Configurations`. Click the `+` button at the top-left in the
 `Run/Debug Configurations` pop up window. Select `Remote` in `Add new configuration`. Type 7777 into
 the Port field and click OK to start the debugger.
 
 Open the class `PropertiesResource` in the editor and click in the margin on the first line of the method
-`getProperties()`. This will set a breakpoint on that line.
+`getProperties()`. This will set a breakpoint on that line. This class can be found in the directory
+`start/src/main/java` in the package `io.openliberty.guides.rest`.
 
 Now refresh the browser at the http://localhost:9080/LibertyProject/System/properties[^] URL. The server will stop at
 the breakpoint you set and you can examine the state of your JVM. Click Resume Program to continue testing your
