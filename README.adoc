@@ -20,49 +20,31 @@
 :page-permalink: /guides/{projectid}
 :repo-description: Visit the https://openliberty.io/guides/{projectid}.html[website] for the rendered version of the guide.
 :common-includes: https://raw.githubusercontent.com/OpenLiberty/guides-common/master
-= Creating a RESTful web service with IntelliJ
+= Using IntelliJ to develop microservice
 
 [.hidden]
 NOTE: This repository contains the guide documentation source. To view the guide in published form, view it on the https://openliberty.io/guides/{projectid}.html[Open Liberty website].
 
-Learn how to create a REST service on Open Liberty with IntelliJ.
+Learn how to use IntelliJ IDE to develop microservice with Open Liberty..
 
 == What you'll learn
 
-You will learn how to get started with IntelliJ by building and testing a simple REST service which will expose
-the JVM's system properties. The REST service will respond to `GET` requests made to the
+You will learn how to get started with IntelliJ, an integrated development environment written in Java for developing computer software，by building and testing a simple REST service which will expose the JVM's system properties. The REST service will respond to `GET` requests made to the
 `\http://localhost:9080/LibertyProject/System/properties` URL.
 
 This guide is similar to https://openliberty.io/guides/rest-intro.html#creating-the-jax-rs-resource[Creating a RESTful
- web service] but will focus mainly on the IDE.
+ web service].
 
-== Installing and configuring IntelliJ
+== Additional prerequisites
 
-If IntelliJ isn't installed, download and install it on your machine. The free community edition will suffice for this
-guide.
+- *Intellij:* IntelliJ IDEA is an integrated development environment written in Java for developing computer software. For installation instructions, refer to the official https://www.jetbrains.com/idea/download/[Intellij download documentation^].
 
-include::{common-includes}/os-tabs.adoc[]
-
-[.tab_content.windows_section]
---
-https://www.jetbrains.com/idea/download/#section=windows[^]
---
-
-[.tab_content.mac_section]
---
-https://www.jetbrains.com/idea/download/#section=mac[^]
---
-
-[.tab_content.linux_section]
---
-https://www.jetbrains.com/idea/download/#section=linux[^]
-
---
+Learning basic setup and features in https://www.jetbrains.com/idea/documentation/[Intellij official documentation^].
 
 == Getting started
 
 Launch IntelliJ and select `Get from Version Control` and paste the following in the `URL` field:
-`https://github.com/OpenLiberty/guide-IntelliJ.git[^]` and select `Clone`.
+`https://github.com/OpenLiberty/guide-intelliJ.git[^]` and select `Clone`.
 
 Make a note of the directory path that the project is being cloned to.
 
@@ -85,37 +67,37 @@ in the `guide-{projectid}` directory.
 From the menu bar, select `Run` and click `Edit Configurations`. Click the `+` button at the top-left in the
  `Run/Debug Configurations` pop up window. Select `Maven` in `Add new configuration`.
 
-For the `Name` and in `Command line` field, put `liberty:run`.
+In the `Command line` field, put `liberty:run`. In the `Name` field, put `Run finish`
 
 For the `Working directory` field, select the path or navigate to the `finish` directory. 
 
 Once again, click the `+` button at the top-left in the `Run/Debug Configurations` pop up window. Select `Maven`
 in `Add new configuration`.
 
-For the `Name` and in `Command line` field, put `liberty:stop`.
+For the `Name` and in `Command line` field, put `liberty:stop`. In the `Name` field, put `Stop finish`.
 
 Finally, click the `+` button at the top-left in the `Run/Debug Configurations` pop up window. Select `Maven`
 in `Add new configuration`.
 
-For the `Name` and in `Command line` field, put `liberty:dev`.
+For the `Name` and in `Command line` field, put `liberty:dev`. In the `Name` field, put `Develop start`.
 
 For the `Working directory` field, select the path or navigate to the `start` directory. 
 
 Click `OK` to save changes.
 
-=== Try what you'll build
+== Try what you'll build
 
 The `finish` directory in the root of this guide contains the finished application. Give it a try before you proceed.
 
-To try out the application, you can select `Run` in the menu bar and click `Run...`. Select `liberty:run`
+To try out the application, you can select `Run` in the menu bar and click `Run...`. Select `Run finish`
 in the pop up window and deploy it to Open Liberty.
 
 The tool window will be activated by default displaying a console which allows you to follow the progress of the build.
 
-Check out the service at the
+Try look at the console out for the `Run finish`. If the following statement `"CWWKF0011I: The defaultServer server is ready to run a smarter planet. The defaultServer server started in 6.228 seconds."` shows in the console, check out the service at the
 http://localhost:9080/LibertyProject/System/properties[^] URL.
 
-Select `Run` in the menu bar and click `Run...` and then select `liberty:stop` in the pop up window.
+Select `Run` in the menu bar and click `Run...` and then select `Stop finish` in the pop up window.
 
 You can also use the icons on the toolbar to toggle quickly between the different configurations that were set up
 above.
@@ -125,8 +107,11 @@ above.
 On the top left hand side of the screen, expand the `guide-{projectid}` project and navigate to the `start` directory
 to begin.
 
-Select `Run` in the menu bar and click `Run...`. Select `liberty:dev` in the pop up window which will start the
+Select `Run` in the menu bar and click `Run...`. Select `Develop start` in the pop up window which will start the
 Open Liberty server in development mode and will listen for file changes.
+
+Check out the service that you created at the
+http://localhost:9080/guide-IntelliJ/System/properties[^] URL.
 
 == Configuring the server
 
@@ -144,7 +129,7 @@ server.xml
 include::finish/src/main/liberty/config/server.xml[]
 ----
 
-== Building and running the application
+== Running the microservice
 
 The Open Liberty server was started in development mode at the beginning of the guide and all the
 changes were automatically picked up.
@@ -152,10 +137,10 @@ changes were automatically picked up.
 Check out the service that you created at the
 http://localhost:9080/LibertyProject/System/properties[^] URL.
 
-== Debugging feature
+== Debugging the microservice
 
-You may wish to debug the program. After you run `liberty:dev` you can attach the IntelliJ debugger to the Open Liberty
-process. If the debugger does not attach verify that you are running `liberty:dev` and not `liberty:run`.
+You may wish to debug the program. After you run `Develop start` you can attach the IntelliJ debugger to the Open Liberty
+process.
 
 From the menu bar, select `Run` and click `Edit Configurations`. Click the `+` button at the top-left in the
 `Run/Debug Configurations` pop up window. Select `Remote` in `Add new configuration`. Type 7777 into
@@ -169,7 +154,7 @@ Now refresh the browser at the http://localhost:9080/LibertyProject/System/prope
 the breakpoint you set and you can examine the state of your JVM. Click Resume Program to continue testing your
 application.
 
-== Testing the service
+== Testing the microservice
 
 You can test this service manually by starting a server and pointing a web browser at the
 http://localhost:9080/LibertyProject/System/properties[^] URL. Automated tests are a much better
@@ -214,7 +199,7 @@ To see whether the tests detect a failure, add an assertion that you know fails,
 assertion to a constant value that doesn't match the `os.name` system property.
 
 When you are done checking out the service, exit development mode by selecting `Run` in the menu bar and clicking
-`Run...` and then selecting `liberty:stop` in the pop up window. Alternatively, type `q` in the shell session where
+`Run...` and then selecting `Stop finish` in the pop up window. Alternatively, type `q` in the shell session where
 you ran the server and then press the `enter/return` key
 
 == Great work! You're done!
