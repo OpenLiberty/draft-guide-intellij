@@ -1,4 +1,4 @@
-//  Copyright (c) 2017, 2019 IBM Corporation and others.
+//  Copyright (c) 2019 IBM Corporation and others.
 // Licensed under Creative Commons Attribution-NoDerivatives
 // 4.0 International (CC BY-ND 4.0)
 //   https://creativecommons.org/licenses/by-nd/4.0/
@@ -6,7 +6,7 @@
 // Contributors:
 //     IBM Corporation
 //
-:projectid: IntelliJ
+:projectid: intellij
 :page-layout: guide-multipane
 :page-duration: 30 minutes
 :page-releasedate: 2019-12-03
@@ -14,6 +14,8 @@
 :page-essential: true
 :page-essential-order: 1
 :page-description: Learn how to create a REST service with Open Liberty with IntelliJ.
+:page-seo-title: Using IntelliJ to develop microservice
+:page-seo-description: A tutorial on how to use IntelliJ IDE to develop a microservice with Open Liberty
 :guide-author: Open Liberty
 :page-tags: ['MicroProfile', 'Java EE', 'Jakarta EE', 'IntelliJ']
 :page-related-guides: ['rest-client-java', 'rest-client-angularjs', 'rest-intro']
@@ -25,11 +27,11 @@
 [.hidden]
 NOTE: This repository contains the guide documentation source. To view the guide in published form, view it on the https://openliberty.io/guides/{projectid}.html[Open Liberty website].
 
-Learn how to use IntelliJ IDE to develop microservice with Open Liberty..
+Learn how to use IntelliJ IDE to develop a microservice with Open Liberty.
 
 == What you'll learn
 
-You will learn how to get started with IntelliJ, an integrated development environment written in Java for developing computer software，by building and testing a simple REST service which will expose the JVM's system properties. The REST service will respond to `GET` requests made to the
+You will learn how to get started with IntelliJ, an integrated development environment written in Java for developing computer software, by building and testing a simple REST service which will expose the JVM's system properties. The REST service will respond to `GET` requests made to the
 `\http://localhost:9080/LibertyProject/System/properties` URL.
 
 This guide is similar to https://openliberty.io/guides/rest-intro.html#creating-the-jax-rs-resource[Creating a RESTful
@@ -37,9 +39,9 @@ This guide is similar to https://openliberty.io/guides/rest-intro.html#creating-
 
 == Additional prerequisites
 
-- *Intellij:* IntelliJ IDEA is an integrated development environment written in Java for developing computer software. For installation instructions, refer to the official https://www.jetbrains.com/idea/download/[Intellij download documentation^].
+- *IntelliJ:* For installation instructions of IntelliJ, refer to the official https://www.jetbrains.com/idea/download/[IntelliJ download documentation^].
 
-Learning basic setup and features in https://www.jetbrains.com/idea/documentation/[Intellij official documentation^].
+Learn basic setup and features in https://www.jetbrains.com/idea/documentation/[IntelliJ official documentation^].
 
 == Getting started
 
@@ -49,7 +51,7 @@ Launch IntelliJ and select `Get from Version Control` and paste the following in
 Make a note of the directory path that the project is being cloned to.
 
 When prompted if you would like to create a project, select `Yes`. On the `Import Project` dialog, choose `Import
-Project from external model`, select `Maven` and click on `Finish`.
+project from external model`, select `Maven` and click on `Finish`.
 
 You should see a progress bar indicating the status of the operation. Click on `Open` on the welcome screen and
 navigate to the directory that the project was saved and select `Ok`. On the top left hand side of the screen,
@@ -67,7 +69,7 @@ in the `guide-{projectid}` directory.
 From the menu bar, select `Run` and click `Edit Configurations`. Click the `+` button at the top-left in the
  `Run/Debug Configurations` pop up window. Select `Maven` in `Add new configuration`.
 
-In the `Command line` field, put `liberty:run`. In the `Name` field, put `Run finish`
+In the `Command line` field, put `liberty:run`. In the `Name` field, put `Run finish`.
 
 For the `Working directory` field, select the path or navigate to the `finish` directory. 
 
@@ -85,6 +87,9 @@ For the `Working directory` field, select the path or navigate to the `start` di
 
 Click `OK` to save changes.
 
+You can also use the icons on the toolbar to toggle quickly between the different configurations that were set up
+above.
+
 == Try what you'll build
 
 The `finish` directory in the root of this guide contains the finished application. Give it a try before you proceed.
@@ -98,9 +103,6 @@ Try look at the console out for the `Run finish`. If the following statement `"C
 http://localhost:9080/LibertyProject/System/properties[^] URL.
 
 Select `Run` in the menu bar and click `Run...` and then select `Stop finish` in the pop up window.
-
-You can also use the icons on the toolbar to toggle quickly between the different configurations that were set up
-above.
 
 == Creating the application
 
@@ -143,7 +145,7 @@ You may wish to debug the program. After you run `Develop start` you can attach 
 process.
 
 From the menu bar, select `Run` and click `Edit Configurations`. Click the `+` button at the top-left in the
-`Run/Debug Configurations` pop up window. Select `Remote` in `Add new configuration`. Type 7777 into
+`Run/Debug Configurations` pop up window. Select `Remote` in `Add new configuration`. Type `7777` into
 the Port field and click OK to start the debugger.
 
 Open the class `PropertiesResource` in the editor and click in the margin on the first line of the method
