@@ -20,9 +20,9 @@
 :page-tags: ['MicroProfile', 'Java EE', 'Jakarta EE', 'IntelliJ']
 :page-related-guides: ['rest-client-java', 'rest-client-angularjs', 'rest-intro']
 :page-permalink: /guides/{projectid}
-:repo-description: Visit the https://openliberty.io/guides/{projectid}.html[website] for the rendered version of the guide.
+:repo-description: Go to the https://openliberty.io/guides/{projectid}.html[website] for the rendered version of the guide.
 :common-includes: https://raw.githubusercontent.com/OpenLiberty/guides-common/master
-= Using IntelliJ to develop microservice
+= Using IntelliJ to develop a microservice
 
 [.hidden]
 NOTE: This repository contains the guide documentation source. To view the guide in published form, view it on the https://openliberty.io/guides/{projectid}.html[Open Liberty website].
@@ -31,7 +31,8 @@ Learn how to use IntelliJ IDE to develop a microservice with Open Liberty.
 
 == What you'll learn
 
-You will learn how to get started with IntelliJ, an integrated development environment written in Java for developing computer software, by building and testing a simple REST service which will expose the JVM's system properties. The REST service will respond to `GET` requests made to the
+You will learn how to get started with IntelliJ, an integrated development environment written in Java for developing computer software.
+You'll build and test a simple REST service that will display the JVM's system properties. The REST service will respond to `GET` requests made to the
 `\http://localhost:9080/LibertyProject/System/properties` URL.
 
 This guide is similar to https://openliberty.io/guides/rest-intro.html#creating-the-jax-rs-resource[Creating a RESTful
@@ -45,50 +46,50 @@ Learn basic setup and features in https://www.jetbrains.com/idea/documentation/[
 
 == Getting started
 
-Launch IntelliJ and select `Get from Version Control` and paste the following in the `URL` field:
+Start IntelliJ, select `Get from Version Control,` paste the following in the `URL` field:
 `https://github.com/OpenLiberty/guide-intelliJ.git[^]` and select `Clone`.
 
 Make a note of the directory path that the project is being cloned to.
 
-When prompted if you would like to create a project, select `Yes`. On the `Import Project` dialog, choose `Import
-project from external model`, select `Maven` and click on `Finish`.
+When prompted if you would like to create a project, select `Yes`. On the `Import Project` dialog box, choose `Import
+project from external model`, select `Maven` and click `Finish`.
 
-You should see a progress bar indicating the status of the operation. Click on `Open` on the welcome screen and
-navigate to the directory that the project was saved and select `Ok`. On the top left hand side of the screen,
+You should see a progress bar indicating the status of the operation. Click `Open` on the welcome screen and
+navigate to the directory that the project was saved and select `Ok`. On the upper left side of the screen,
 expand the `guide-{projectid}` project.
 
 The `start` directory contains the starting project that you will build upon.
 
 The `finish` directory contains the finished project that you will build.
 
-At the bottom right of the IDE, click on `Terminal` to bring up the console if needed. By default, it should start
+At the lower right of the IDE, click `Terminal` to open the console if needed. By default, it should start
 in the `guide-{projectid}` directory.
 
 == Configure the build project
 
-From the menu bar, select `Run` and click `Edit Configurations`. Click the `+` button at the top-left in the
+From the menu bar, select `Run` and click `Edit Configurations`. Click the `+` button at the upper left in the
  `Run/Debug Configurations` pop up window. Select `Maven` in `Add new configuration`.
 
 In the `Command line` field, put `liberty:run`. In the `Name` field, put `Run finish`.
 
 For the `Working directory` field, select the path or navigate to the `finish` directory. 
 
-Once again, click the `+` button at the top-left in the `Run/Debug Configurations` pop up window. Select `Maven`
+Once again, click the `+` button at the upper left in the `Run/Debug Configurations` pop up window. Select `Maven`
 in `Add new configuration`.
 
-For the `Name` and in `Command line` field, put `liberty:stop`. In the `Name` field, put `Stop finish`.
+In the `Command line` field, put `liberty:stop`. In the `Name` field, put `Stop finish`.
 
-Finally, click the `+` button at the top-left in the `Run/Debug Configurations` pop up window. Select `Maven`
+Finally, click the `+` button at the upper left in the `Run/Debug Configurations` pop up window. Select `Maven`
 in `Add new configuration`.
 
-For the `Name` and in `Command line` field, put `liberty:dev`. In the `Name` field, put `Develop start`.
+In the `Command line` field, put `liberty:dev`. In the `Name` field, put `Develop start`.
 
 For the `Working directory` field, select the path or navigate to the `start` directory. 
 
 Click `OK` to save changes.
 
 You can also use the icons on the toolbar to toggle quickly between the different configurations that were set up
-above.
+previously.
 
 == Try what you'll build
 
@@ -106,7 +107,7 @@ Select `Run` in the menu bar and click `Run...` and then select `Stop finish` in
 
 == Creating the application
 
-On the top left hand side of the screen, expand the `guide-{projectid}` project and navigate to the `start` directory
+On the upper left side of the screen, expand the `guide-{projectid}` project and navigate to the `start` directory
 to begin.
 
 Select `Run` in the menu bar and click `Run...`. Select `Develop start` in the pop up window which will start the
@@ -141,15 +142,15 @@ http://localhost:9080/LibertyProject/System/properties[^] URL.
 
 == Debugging the microservice
 
-You may wish to debug the program. After you run `Develop start` you can attach the IntelliJ debugger to the Open Liberty
+You may want to debug the program. After you run `Develop start` you can attach the IntelliJ debugger to the Open Liberty
 process.
 
-From the menu bar, select `Run` and click `Edit Configurations`. Click the `+` button at the top-left in the
+From the menu bar, select `Run` and click `Edit Configurations`. Click the `+` button at the upper left in the
 `Run/Debug Configurations` pop up window. Select `Remote` in `Add new configuration`. Type `7777` into
 the Port field and click OK to start the debugger.
 
 Open the class `PropertiesResource` in the editor and click in the margin on the first line of the method
-`getProperties()`. This will set a breakpoint on that line. This class can be found in the directory
+`getProperties()`. This action will set a breakpoint on that line. This class can be found in the directory
 `start/src/main/java` in the package `io.openliberty.guides.rest`.
 
 Now refresh the browser at the http://localhost:9080/LibertyProject/System/properties[^] URL. The server will stop at
