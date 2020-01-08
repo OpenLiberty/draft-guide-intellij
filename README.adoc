@@ -17,7 +17,7 @@
 :page-seo-title: Using IntelliJ to develop microservice
 :page-seo-description: A tutorial on how to use IntelliJ IDE to develop a microservice with Open Liberty
 :guide-author: Open Liberty
-:page-tags: ['MicroProfile', 'Java EE', 'Jakarta EE', 'IntelliJ']
+:page-tags: ['MicroProfile', 'Java EE', 'Jakarta EE', 'Maven']
 :page-related-guides: ['rest-client-java', 'rest-client-angularjs', 'rest-intro']
 :page-permalink: /guides/{projectid}
 :repo-description: Visit the https://openliberty.io/guides/{projectid}.html[website] for the rendered version of the guide.
@@ -41,7 +41,7 @@ This guide is similar to https://openliberty.io/guides/rest-intro.html#creating-
 
 == Additional prerequisites
 
-- *IntelliJ:* For installation instructions of IntelliJ, refer to the official https://www.jetbrains.com/idea/download/[IntelliJ download documentation^].
+- *IntelliJ:* For installation instructions of IntelliJ, refer to the official https://www.jetbrains.com/idea/download/[IntelliJ download documentation^]. The version of this guide use is `IntelliJ IDEA 2019.3.1`.
 
 Learn basic setup and features in https://www.jetbrains.com/idea/documentation/[IntelliJ official documentation^].
 
@@ -55,8 +55,7 @@ Make a note of the directory path that the project is being cloned to.
 When prompted if you would like to create a project, select `Yes`. On the `Import Project` dialog, choose `Import
 project from external model`, select `Maven` and click on `Finish`.
 
-You should see a progress bar indicating the status of the operation. Click on `Open` on the welcome screen and
-navigate to the directory that the project was saved and select `Ok`. On the top left hand side of the screen,
+Click on `Open` on the welcome screen and navigate to the directory that the project was saved and select `Ok`. On the top left hand side of the screen,
 expand the `guide-{projectid}` project.
 
 The `start` directory contains the starting project that you will build upon.
@@ -95,6 +94,8 @@ The tool window will be activated by default displaying a console which allows y
 Try look at the console out for the `Run finish`. If the following statement `"CWWKF0011I: The defaultServer server is ready to run a smarter planet. The defaultServer server started in 6.228 seconds."` shows in the console, check out the service at the
 http://localhost:9080/LibertyProject/System/properties[^] URL.
 
+You are expected to see the system properties with the format of JSON Strings.
+
 Select `Run` in the menu bar and click `Run...` and then select `Stop finish` in the pop up window.
 
 == Creating the application
@@ -131,6 +132,8 @@ changes were automatically picked up.
 
 Check out the service that you created at the
 http://localhost:9080/LibertyProject/System/properties[^] URL.
+
+You are expected to see the system properties with the format of JSON Strings.
 
 == Debugging the microservice
 
