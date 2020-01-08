@@ -9,7 +9,7 @@
  * Contributors:
  *     IBM Corporation - initial API and implementation
  *******************************************************************************/
- // end::comment[]
+// end::comment[]
 package io.openliberty.guides.rest;
 
 import java.util.Properties;
@@ -31,6 +31,7 @@ public class PropertiesResource {
     @Produces(MediaType.APPLICATION_JSON)
     // end::produces[]
     public Properties getProperties() {
+        Properties props = System.getProperties();
         return System.getProperties();
     }
 
