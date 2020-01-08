@@ -9,7 +9,7 @@
 :projectid: intellij
 :page-layout: guide-multipane
 :page-duration: 30 minutes
-:page-releasedate: 2019-12-03
+:page-releasedate: 2020-01-23
 :page-guide-category: microprofile
 :page-essential: true
 :page-essential-order: 1
