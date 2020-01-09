@@ -109,6 +109,8 @@ Open Liberty server in development mode and will listen for file changes.
 Check out the service that you created at the
 http://localhost:9080/guide-IntelliJ/System/properties[^] URL.
 
+You are expected to see the system properties with the format of JSON Strings.
+
 == Configuring the server
 
 To get the service running, the Open Liberty server needs to be correctly configured.
@@ -147,7 +149,7 @@ the `Port` field and `Check` in the `Name` field. Click `OK` to save the changes
 Open the class `PropertiesResource` in the editor, which is located in the `start/src/main/java/io/openliberty/guides/rest` directory. Click in the margin on line `34`, which is `return System.getProperties();`. This will set a breakpoint on that line.
 
 Now refresh the browser at the http://localhost:9080/LibertyProject/System/properties[^] URL. The server will stop at
-the breakpoint you set and you can examine the state of your JVM. Click Resume Program to continue testing your
+the breakpoint you set and you can examine the state of your JVM. Select `Run` in the menu bar and click `Resume Program` to continue testing your
 application.
 
 == Testing the microservice
