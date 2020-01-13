@@ -4,6 +4,6 @@
       <feature>jaxrs-2.1</feature>
   </featureManager>
 
-  <webApplication location="guide-IntelliJ.war"/>
+  <webApplication location="guide-intellij.war"/>
 
 </server>
