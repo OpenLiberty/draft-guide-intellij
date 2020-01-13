@@ -14,7 +14,7 @@
 :page-essential: true
 :page-essential-order: 1
 :page-description: Learn how to create a REST service with Open Liberty with IntelliJ.
-:page-seo-title: Using IntelliJ to develop microservice
+:page-seo-title: Using IntelliJ to develop a microservice
 :page-seo-description: A tutorial on how to use IntelliJ IDE to develop a microservice with Open Liberty
 :guide-author: Open Liberty
 :page-tags: ['MicroProfile', 'Java EE', 'Jakarta EE', 'Maven']
@@ -74,6 +74,9 @@ Click the `+` button at the top-left in the `Run/Debug Configurations` pop up wi
 Once again, click the `+` button at the top-left in the `Run/Debug Configurations` pop up window. Select `Maven`
 in `Add new configuration`. For the `Command line` field, put `liberty:stop`. In the `Name` field, put `Stop finish`. For the `Working directory` field, select the path or navigate to the `finish` directory. 
 
+Moreover, click the `+` button at the top-left in the `Run/Debug Configurations` pop up window. Select `Maven`
+in `Add new configuration`. For the `Command line` field, put `liberty:stop`. In the `Name` field, put `Stop start`. For the `Working directory` field, select the path or navigate to the `start` directory. 
+
 Finally, click the `+` button at the top-left in the `Run/Debug Configurations` pop up window. Select `Maven`
 in `Add new configuration`. For the `Command line` field, put `liberty:dev`. In the `Name` field, put `Develop start`. For the `Working directory` field, select the path or navigate to the `start` directory. 
 
@@ -107,7 +110,7 @@ Select `Run` in the menu bar and click `Run...`. Select `Develop start` in the p
 Open Liberty server in development mode and will listen for file changes.
 
 Check out the service that you created at the
-http://localhost:9080/guide-IntelliJ/System/properties[^] URL.
+http://localhost:9080/guide-intellij/System/properties[^] URL.
 
 You are expected to see the system properties with the format of JSON Strings.
 
@@ -194,8 +197,8 @@ To see whether the tests detect a failure, add an assertion that you know fails,
 assertion to a constant value that doesn't match the `os.name` system property.
 
 When you are done checking out the service, exit development mode by selecting `Run` in the menu bar and clicking
-`Run...` and then selecting `Stop finish` in the pop up window. Alternatively, type `q` in the shell session where
-you ran the server and then press the `enter/return` key
+`Run...` and then selecting `Stop start` in the pop up window. Alternatively, type `q` in the shell session where
+you ran the server and then press the `enter/return` key.
 
 == Great work! You're done!
 

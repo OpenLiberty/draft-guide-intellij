@@ -32,5 +32,4 @@ notifications:
     on_failure: always
 branches:
   only:
-  - qa
   - dev

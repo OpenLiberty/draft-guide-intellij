@@ -12,6 +12,6 @@
   <!-- end::httpEndpoint[] -->
   
   <!-- tag::webApplication[] -->
-  <webApplication location="guide-IntelliJ.war" contextRoot="${app.context.root}"/>
+  <webApplication location="guide-Intellij.war" contextRoot="${app.context.root}"/>
   <!-- end::webApplication[] -->
 </server>
