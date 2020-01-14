@@ -44,10 +44,18 @@ This guide is similar to https://openliberty.io/guides/rest-intro.html#creating-
 
 Learn basic setup and features in https://www.jetbrains.com/idea/documentation/[IntelliJ official documentation^].
 
+- *JDK:* Install https://adoptopenjdk.net/?variant=openjdk8&jvmVariant=openj9/[Java 8 JDK^]. The version of JDK is `OpenJDK 8 (LTS)` and JVM is `OpenJ9`.
+
 == Getting started
 
 Launch IntelliJ and select `Get from Version Control` and paste the following in the `URL` field:
-`https://github.com/OpenLiberty/guide-intellij.git[^]` and select `Clone`.
+
+[role='command']
+```
+https://github.com/OpenLiberty/guide-intellij.git
+```
+
+and select `Clone`.
 
 Make a note of the directory path that the project is being cloned to.
 
@@ -84,6 +92,12 @@ Click `OK` to save changes.
 You can also use the icons on the toolbar to toggle quickly between the different configurations that were set up
 above.
 
+For both `start` and `finish` project, you are supposed to configure the SDK.
+
+From the menu bar, select `File` and click `Project Structure`. On the panel on the left, locate the `Project Settings` section and select `Project`.
+
+In the `Project SDK` section, click `New`, choose `JDK` and specify the path to the `Java 8 JDK` downloaded on your computer.
+
 == Try what you'll build
 
 The `finish` directory in the root of this guide contains the finished application. Give it a try before you proceed.
@@ -100,10 +114,7 @@ You are expected to see the system properties with the format of JSON Strings.
 
 Select `Run` in the menu bar and click `Run...` and then select `Stop finish` in the pop up window.
 
-== Creating the application
-
-On the top left hand side of the screen, expand the `guide-{projectid}` project and navigate to the `start` directory
-to begin.
+== Starting the application
 
 Select `Run` in the menu bar and click `Run...`. Select `Develop start` in the pop up window which will start the
 Open Liberty server in development mode and will listen for file changes.
@@ -115,11 +126,13 @@ You are expected to see `This site can't be reached`.
 
 == Configuring the server
 
+On the top left hand side of the screen, expand the `guide-{projectid}` project and navigate to the `start` directory to begin.
+
 To get the service running, the Open Liberty server needs to be correctly configured.
 
 [role="code_command hotspot", subs="quotes"]
 ----
-#Add the server configuration file.#
+#Replace the server configuration file.#
 `src/main/liberty/config/server.xml`
 ----
 
@@ -128,8 +141,6 @@ server.xml
 ----
 include::finish/src/main/liberty/config/server.xml[]
 ----
-
-== Running the microservice
 
 The Open Liberty server was started in development mode at the beginning of the guide and all the
 changes were automatically picked up.
