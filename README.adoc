@@ -10,7 +10,6 @@
 :page-layout: guide-multipane
 :page-duration: 30 minutes
 :page-releasedate: 2020-01-23
-:page-guide-category: microprofile
 :page-essential: true
 :page-essential-order: 1
 :page-description: Learn how to create a REST service with Open Liberty with IntelliJ.
@@ -110,9 +109,9 @@ Select `Run` in the menu bar and click `Run...`. Select `Develop start` in the p
 Open Liberty server in development mode and will listen for file changes.
 
 Check out the service that you created at the
-http://localhost:9080/guide-intellij/System/properties[^] URL.
+http://localhost:9080/LibertyProject/System/properties[^] URL.
 
-You are expected to see the system properties with the format of JSON Strings.
+You are expected to see `This site can't be reached`.
 
 == Configuring the server
 
@@ -120,7 +119,7 @@ To get the service running, the Open Liberty server needs to be correctly config
 
 [role="code_command hotspot", subs="quotes"]
 ----
-#Replace the server configuration file.#
+#Add the server configuration file.#
 `src/main/liberty/config/server.xml`
 ----
 
