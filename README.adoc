@@ -21,7 +21,7 @@
 :page-permalink: /guides/{projectid}
 :repo-description: Visit the https://openliberty.io/guides/{projectid}.html[website] for the rendered version of the guide.
 :common-includes: https://raw.githubusercontent.com/OpenLiberty/guides-common/master
-= Using IntelliJ to develop microservice
+= Using IntelliJ to develop a microservice
 
 [.hidden]
 NOTE: This repository contains the guide documentation source. To view the guide in published form, view it on the https://openliberty.io/guides/{projectid}.html[Open Liberty website].
