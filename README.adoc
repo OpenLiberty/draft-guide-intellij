@@ -9,15 +9,14 @@
 :projectid: intellij
 :page-layout: guide-multipane
 :page-duration: 30 minutes
-:page-releasedate: 2019-12-03
-:page-guide-category: microprofile
+:page-releasedate: 2020-01-23
 :page-essential: true
 :page-essential-order: 1
 :page-description: Learn how to create a REST service with Open Liberty with IntelliJ.
-:page-seo-title: Using IntelliJ to develop microservice
+:page-seo-title: Using IntelliJ to develop a microservice
 :page-seo-description: A tutorial on how to use IntelliJ IDE to develop a microservice with Open Liberty
 :guide-author: Open Liberty
-:page-tags: ['MicroProfile', 'Java EE', 'Jakarta EE', 'IntelliJ']
+:page-tags: ['MicroProfile', 'Java EE', 'Jakarta EE', 'Maven']
 :page-related-guides: ['rest-client-java', 'rest-client-angularjs', 'rest-intro']
 :page-permalink: /guides/{projectid}
 :repo-description: Go to the https://openliberty.io/guides/{projectid}.html[website] for the rendered version of the guide.
@@ -27,12 +26,14 @@
 [.hidden]
 NOTE: This repository contains the guide documentation source. To view the guide in published form, view it on the https://openliberty.io/guides/{projectid}.html[Open Liberty website].
 
-Learn how to use IntelliJ IDE to develop a microservice with Open Liberty.
+Learn how to use the IntelliJ IDE to develop a microservice with Open Liberty.
 
 == What you'll learn
 
-You will learn how to get started with IntelliJ, an integrated development environment written in Java for developing computer software.
-You'll build and test a simple REST service that will display the JVM's system properties. The REST service will respond to `GET` requests made to the
+IntelliJ is an integrated development environment written in Java for developing computer software.
+
+You'll learn how to get started with IntelliJ by building and testing a simple REST service.
+This service will display the JVM's system properties. The REST service will respond to `GET` requests made to the
 `\http://localhost:9080/LibertyProject/System/properties` URL.
 
 This guide is similar to https://openliberty.io/guides/rest-intro.html#creating-the-jax-rs-resource[Creating a RESTful
@@ -40,23 +41,30 @@ This guide is similar to https://openliberty.io/guides/rest-intro.html#creating-
 
 == Additional prerequisites
 
-- *IntelliJ:* For installation instructions of IntelliJ, refer to the official https://www.jetbrains.com/idea/download/[IntelliJ download documentation^].
+- *IntelliJ:* For installation instructions of IntelliJ, refer to the official https://www.jetbrains.com/idea/download/[IntelliJ download documentation^]. The version of this guide use is `IntelliJ IDEA 2019.3.1`.
 
 Learn basic setup and features in https://www.jetbrains.com/idea/documentation/[IntelliJ official documentation^].
 
+- *JDK:* Install https://adoptopenjdk.net/?variant=openjdk8&jvmVariant=openj9/[Java 8 JDK^]. The version of JDK is `OpenJDK 8 (LTS)` and JVM is `OpenJ9`.
+
 == Getting started
 
-Start IntelliJ, select `Get from Version Control,` paste the following in the `URL` field:
-`https://github.com/OpenLiberty/guide-intelliJ.git[^]` and select `Clone`.
+Start IntelliJ, select `Get from Version Control` and paste the following in the `URL` field:
+
+[role='command']
+```
+https://github.com/OpenLiberty/guide-intellij.git
+```
+
+Select `Clone`.
 
 Make a note of the directory path that the project is being cloned to.
 
 When prompted if you would like to create a project, select `Yes`. On the `Import Project` dialog box, choose `Import
 project from external model`, select `Maven` and click `Finish`.
 
-You should see a progress bar indicating the status of the operation. Click `Open` on the welcome screen and
-navigate to the directory that the project was saved and select `Ok`. On the upper left side of the screen,
-expand the `guide-{projectid}` project.
+Click `Open` on the welcome screen and navigate to the directory that the project was saved and select `Ok`. 
+On the upper left side of the screen, expand the `guide-{projectid}` project.
 
 The `start` directory contains the starting project that you will build upon.
 
@@ -67,29 +75,38 @@ in the `guide-{projectid}` directory.
 
 == Configure the build project
 
-From the menu bar, select `Run` and click `Edit Configurations`. Click the `+` button at the upper left in the
- `Run/Debug Configurations` pop up window. Select `Maven` in `Add new configuration`.
+From the menu bar, select `Run` and click `Edit Configurations`. 
 
+Click the `+` button at the upper left in the `Run/Debug Configurations` pop up window. 
+Select `Maven` in `Add new configuration`.
 In the `Command line` field, put `liberty:run`. In the `Name` field, put `Run finish`.
-
 For the `Working directory` field, select the path or navigate to the `finish` directory. 
 
-Once again, click the `+` button at the upper left in the `Run/Debug Configurations` pop up window. Select `Maven`
-in `Add new configuration`.
-
+Next, click the `+` button at the upper left in the `Run/Debug Configurations` pop up window. 
+Select `Maven` in `Add new configuration`. 
 In the `Command line` field, put `liberty:stop`. In the `Name` field, put `Stop finish`.
+For the `Working directory` field, select the path or navigate to the `finish` directory. 
 
-Finally, click the `+` button at the upper left in the `Run/Debug Configurations` pop up window. Select `Maven`
-in `Add new configuration`.
-
+Once again, click the `+` button at the upper left in the `Run/Debug Configurations` pop up window. 
+Select `Maven` in `Add new configuration`.
 In the `Command line` field, put `liberty:dev`. In the `Name` field, put `Develop start`.
+For the `Working directory` field, select the path or navigate to the `start` directory. 
 
+Finally, click the `+` button at the upper left in the `Run/Debug Configurations` pop up window. 
+Select `Maven` in `Add new configuration`. 
+In the `Command line` field, put `liberty:stop`. In the `Name` field, put `Stop start`. 
 For the `Working directory` field, select the path or navigate to the `start` directory. 
 
 Click `OK` to save changes.
 
 You can also use the icons on the toolbar to toggle quickly between the different configurations that were set up
 previously.
+
+For both `start` and `finish` project, you are supposed to configure the SDK.
+
+From the menu bar, select `File` and click `Project Structure`. On the panel on the left, locate the `Project Settings` section and select `Project`.
+
+In the `Project SDK` section, click `New`, choose `JDK` and specify the path to the `Java 8 JDK` downloaded on your computer.
 
 == Try what you'll build
 
@@ -103,20 +120,23 @@ The tool window will be activated by default displaying a console which allows y
 Try look at the console out for the `Run finish`. If the following statement `"CWWKF0011I: The defaultServer server is ready to run a smarter planet. The defaultServer server started in 6.228 seconds."` shows in the console, check out the service at the
 http://localhost:9080/LibertyProject/System/properties[^] URL.
 
+You are expected to see the system properties with the format of JSON Strings.
+
 Select `Run` in the menu bar and click `Run...` and then select `Stop finish` in the pop up window.
 
-== Creating the application
-
-On the upper left side of the screen, expand the `guide-{projectid}` project and navigate to the `start` directory
-to begin.
+== Starting the application
 
 Select `Run` in the menu bar and click `Run...`. Select `Develop start` in the pop up window which will start the
 Open Liberty server in development mode and will listen for file changes.
 
 Check out the service that you created at the
-http://localhost:9080/guide-IntelliJ/System/properties[^] URL.
+http://localhost:9080/LibertyProject/System/properties[^] URL.
+
+You are expected to see `This site can't be reached`.
 
 == Configuring the server
+
+On the top left hand side of the screen, expand the `guide-{projectid}` project and navigate to the `start` directory to begin.
 
 To get the service running, the Open Liberty server needs to be correctly configured.
 
@@ -132,13 +152,13 @@ server.xml
 include::finish/src/main/liberty/config/server.xml[]
 ----
 
-== Running the microservice
-
 The Open Liberty server was started in development mode at the beginning of the guide and all the
 changes were automatically picked up.
 
 Check out the service that you created at the
 http://localhost:9080/LibertyProject/System/properties[^] URL.
+
+You are expected to see the system properties with the format of JSON Strings.
 
 == Debugging the microservice
 
@@ -147,14 +167,13 @@ process.
 
 From the menu bar, select `Run` and click `Edit Configurations`. Click the `+` button at the upper left in the
 `Run/Debug Configurations` pop up window. Select `Remote` in `Add new configuration`. Type `7777` into
-the Port field and click OK to start the debugger.
+the `Port` field and `Check` in the `Name` field. Click `OK` to save the changes. Select the menu bar and click `Debug`. Select `Check` in the pop-up window to start the debugger.
 
-Open the class `PropertiesResource` in the editor and click in the margin on the first line of the method
-`getProperties()`. This action will set a breakpoint on that line. This class can be found in the directory
-`start/src/main/java` in the package `io.openliberty.guides.rest`.
+In the editor open the class `PropertiesResource` which is located in the `start/src/main/java/io/openliberty/guides/rest` directory. 
+Click in the margin on line `34`, which is `return System.getProperties();`. This action will set a breakpoint on that line.
 
 Now refresh the browser at the http://localhost:9080/LibertyProject/System/properties[^] URL. The server will stop at
-the breakpoint you set and you can examine the state of your JVM. Click Resume Program to continue testing your
+the breakpoint you set and you can examine the state of your JVM. Select `Run` in the menu bar and click `Resume Program` to continue testing your
 application.
 
 == Testing the microservice
@@ -176,9 +195,6 @@ include::finish/src/test/java/it/io/openliberty/guides/rest/EndpointIT.java[]
 
 This test class has more lines of code than the resource implementation. This situation is common.
 The test method is indicated with the [hotspot=test file=0]`@Test` annotation.
-
-pom.xml
-[source , xml, linenums,role="code_column"]
 
 === Running the tests
 
@@ -202,8 +218,8 @@ To see whether the tests detect a failure, add an assertion that you know fails,
 assertion to a constant value that doesn't match the `os.name` system property.
 
 When you are done checking out the service, exit development mode by selecting `Run` in the menu bar and clicking
-`Run...` and then selecting `Stop finish` in the pop up window. Alternatively, type `q` in the shell session where
-you ran the server and then press the `enter/return` key
+`Run...` and then selecting `Stop start` in the pop up window. Alternatively, type `q` in the shell session where
+you ran the server and then press the `enter/return` key.
 
 == Great work! You're done!
 
