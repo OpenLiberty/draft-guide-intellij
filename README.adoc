@@ -132,7 +132,7 @@ Open Liberty server in development mode and will listen for file changes.
 Check out the service at the
 http://localhost:9080/LibertyProject/System/properties[^] URL.
 
-You are expected to see `This site can't be reached`.
+You are expected to see `Context Root Not Found`.
 
 == Configuring the server
 
