@@ -119,7 +119,7 @@ Select `Run` in the menu bar and click `Run...` and then select `Stop finish` in
 Select `Run` in the menu bar and click `Run...`. Select `Develop start` in the pop up window which will start the
 Open Liberty server in development mode and will listen for file changes.
 
-Check out the service that you created at the
+Check out the service at the
 http://localhost:9080/LibertyProject/System/properties[^] URL.
 
 You are expected to see `This site can't be reached`.
@@ -145,7 +145,7 @@ include::finish/src/main/liberty/config/server.xml[]
 The Open Liberty server was started in development mode at the beginning of the guide and all the
 changes were automatically picked up.
 
-Check out the service that you created at the
+Check out the service at the
 http://localhost:9080/LibertyProject/System/properties[^] URL.
 
 You are expected to see the system properties with the format of JSON Strings.
@@ -157,7 +157,7 @@ process.
 
 From the menu bar, select `Run` and click `Edit Configurations`. Click the `+` button at the top-left in the
 `Run/Debug Configurations` pop up window. Select `Remote` in `Add new configuration`. Type `7777` into
-the `Port` field and `Check` in the `Name` field. Click `OK` to save the changes. Select the menu bar and click `Debug`. Select `Check` in the pop-up window to start the debugger.
+the `Port` field and `Check` in the `Name` field. Click `OK` to save the changes. Select `Run` from the menu bar and click `Debug...`. Select `Check` in the pop-up window to start the debugger.
 
 Open the class `PropertiesResource` in the editor, which is located in the `start/src/main/java/io/openliberty/guides/rest` directory. Click in the margin on line `34`, which is `return System.getProperties();`. This will set a breakpoint on that line.
 
