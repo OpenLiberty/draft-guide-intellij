@@ -19,7 +19,7 @@
 :page-tags: ['MicroProfile', 'Java EE', 'Jakarta EE', 'Maven']
 :page-related-guides: ['rest-client-java', 'rest-client-angularjs', 'rest-intro']
 :page-permalink: /guides/{projectid}
-:repo-description: Visit the https://openliberty.io/guides/{projectid}.html[website] for the rendered version of the guide.
+:repo-description: Go to the https://openliberty.io/guides/{projectid}.html[website] for the rendered version of the guide.
 :common-includes: https://raw.githubusercontent.com/OpenLiberty/guides-common/master
 = Using IntelliJ to develop a microservice
 
@@ -32,7 +32,8 @@ Learn how to use the IntelliJ IDE to develop a microservice with Open Liberty.
 
 IntelliJ is an integrated development environment written in Java for developing computer software.
 
-You will learn how to get started with IntelliJ by building and testing a simple REST service which will expose the JVM's system properties. The REST service will respond to `GET` requests made to the
+You'll learn how to get started with IntelliJ by building and testing a simple REST service.
+This service will display the JVM's system properties. The REST service will respond to `GET` requests made to the
 `\http://localhost:9080/LibertyProject/System/properties` URL.
 
 This guide is similar to https://openliberty.io/guides/rest-intro.html#creating-the-jax-rs-resource[Creating a RESTful
@@ -48,49 +49,58 @@ Learn basic setup and features in https://www.jetbrains.com/idea/documentation/[
 
 == Getting started
 
-Launch IntelliJ and select `Get from Version Control` and paste the following in the `URL` field:
+Start IntelliJ, select `Get from Version Control` and paste the following in the `URL` field:
 
 [role='command']
 ```
 https://github.com/OpenLiberty/guide-intellij.git
 ```
 
-and select `Clone`.
+Select `Clone`.
 
 Make a note of the directory path that the project is being cloned to.
 
-When prompted if you would like to create a project, select `Yes`. On the `Import Project` dialog, choose `Import
-project from external model`, select `Maven` and click on `Finish`.
+When prompted if you would like to create a project, select `Yes`. On the `Import Project` dialog box, choose `Import
+project from external model`, select `Maven` and click `Finish`.
 
-Click on `Open` on the welcome screen and navigate to the directory that the project was saved and select `Ok`. On the top left hand side of the screen,
-expand the `guide-{projectid}` project.
+Click `Open` on the welcome screen and navigate to the directory that the project was saved and select `Ok`. 
+On the upper left side of the screen, expand the `guide-{projectid}` project.
 
 The `start` directory contains the starting project that you will build upon.
 
 The `finish` directory contains the finished project that you will build.
 
-At the bottom left of the IDE, click on `Terminal` to bring up the console if needed. By default, it should start
+At the lower right of the IDE, click `Terminal` to open the console if needed. By default, it should start
 in the `guide-{projectid}` directory.
 
 == Configure the build project
 
 From the menu bar, select `Run` and click `Edit Configurations`. 
 
-Click the `+` button at the top-left in the `Run/Debug Configurations` pop up window. Select `Maven` in `Add new configuration`. In the `Command line` field, put `liberty:run`. In the `Name` field, put `Run finish`. For the `Working directory` field, select the path or navigate to the `finish` directory. 
+Click the `+` button at the upper left in the `Run/Debug Configurations` pop up window. 
+Select `Maven` in `Add new configuration`.
+In the `Command line` field, put `liberty:run`. In the `Name` field, put `Run finish`.
+For the `Working directory` field, select the path or navigate to the `finish` directory. 
 
-Once again, click the `+` button at the top-left in the `Run/Debug Configurations` pop up window. Select `Maven`
-in `Add new configuration`. For the `Command line` field, put `liberty:stop`. In the `Name` field, put `Stop finish`. For the `Working directory` field, select the path or navigate to the `finish` directory. 
+Next, click the `+` button at the upper left in the `Run/Debug Configurations` pop up window. 
+Select `Maven` in `Add new configuration`. 
+In the `Command line` field, put `liberty:stop`. In the `Name` field, put `Stop finish`.
+For the `Working directory` field, select the path or navigate to the `finish` directory. 
 
-Moreover, click the `+` button at the top-left in the `Run/Debug Configurations` pop up window. Select `Maven`
-in `Add new configuration`. For the `Command line` field, put `liberty:stop`. In the `Name` field, put `Stop start`. For the `Working directory` field, select the path or navigate to the `start` directory. 
+Once again, click the `+` button at the upper left in the `Run/Debug Configurations` pop up window. 
+Select `Maven` in `Add new configuration`.
+In the `Command line` field, put `liberty:dev`. In the `Name` field, put `Develop start`.
+For the `Working directory` field, select the path or navigate to the `start` directory. 
 
-Finally, click the `+` button at the top-left in the `Run/Debug Configurations` pop up window. Select `Maven`
-in `Add new configuration`. For the `Command line` field, put `liberty:dev`. In the `Name` field, put `Develop start`. For the `Working directory` field, select the path or navigate to the `start` directory. 
+Finally, click the `+` button at the upper left in the `Run/Debug Configurations` pop up window. 
+Select `Maven` in `Add new configuration`. 
+In the `Command line` field, put `liberty:stop`. In the `Name` field, put `Stop start`. 
+For the `Working directory` field, select the path or navigate to the `start` directory. 
 
 Click `OK` to save changes.
 
 You can also use the icons on the toolbar to toggle quickly between the different configurations that were set up
-above.
+previously.
 
 For both `start` and `finish` project, you are supposed to configure the SDK.
 
@@ -152,14 +162,15 @@ You are expected to see the system properties with the format of JSON Strings.
 
 == Debugging the microservice
 
-You may wish to debug the program. After you run `Develop start` you can attach the IntelliJ debugger to the Open Liberty
+You may want to debug the program. After you run `Develop start` you can attach the IntelliJ debugger to the Open Liberty
 process.
 
-From the menu bar, select `Run` and click `Edit Configurations`. Click the `+` button at the top-left in the
+From the menu bar, select `Run` and click `Edit Configurations`. Click the `+` button at the upper left in the
 `Run/Debug Configurations` pop up window. Select `Remote` in `Add new configuration`. Type `7777` into
 the `Port` field and `Check` in the `Name` field. Click `OK` to save the changes. Select the menu bar and click `Debug`. Select `Check` in the pop-up window to start the debugger.
 
-Open the class `PropertiesResource` in the editor, which is located in the `start/src/main/java/io/openliberty/guides/rest` directory. Click in the margin on line `34`, which is `return System.getProperties();`. This will set a breakpoint on that line.
+In the editor open the class `PropertiesResource` which is located in the `start/src/main/java/io/openliberty/guides/rest` directory. 
+Click in the margin on line `34`, which is `return System.getProperties();`. This action will set a breakpoint on that line.
 
 Now refresh the browser at the http://localhost:9080/LibertyProject/System/properties[^] URL. The server will stop at
 the breakpoint you set and you can examine the state of your JVM. Select `Run` in the menu bar and click `Resume Program` to continue testing your
