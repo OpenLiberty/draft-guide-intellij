@@ -63,8 +63,8 @@ Make a note of the directory path that the project is being cloned to.
 When prompted if you would like to create a project, select `Yes`. On the `Import Project` dialog box, choose `Import
 project from external model`, select `Maven` and click `Finish`.
 
-Click `Open` on the welcome screen and navigate to the directory that the project was saved and select `Ok`. 
-On the upper left side of the screen, expand the `guide-{projectid}` project.
+Click `Open` on the welcome screen and navigate to the directory that the project was saved and select `Open`. 
+Select `View` in the menu bar and navigate to `Tool Windows` and click `Project` to show up the `Project Tool Window` at top left side. Expand the `guide-{projectid}` project.
 
 The `start` directory contains the starting project that you will build upon.
 
@@ -78,22 +78,22 @@ in the `guide-{projectid}` directory.
 From the menu bar, select `Run` and click `Edit Configurations`. 
 
 Click the `+` button at the upper left in the `Run/Debug Configurations` pop up window. 
-Select `Maven` in `Add new configuration`.
+Select `Maven` under `Add new configuration`.
 In the `Command line` field, put `liberty:run`. In the `Name` field, put `Run finish`.
 For the `Working directory` field, select the path or navigate to the `finish` directory. 
 
 Next, click the `+` button at the upper left in the `Run/Debug Configurations` pop up window. 
-Select `Maven` in `Add new configuration`. 
+Select `Maven` under `Add new configuration`. 
 In the `Command line` field, put `liberty:stop`. In the `Name` field, put `Stop finish`.
 For the `Working directory` field, select the path or navigate to the `finish` directory. 
 
 Once again, click the `+` button at the upper left in the `Run/Debug Configurations` pop up window. 
-Select `Maven` in `Add new configuration`.
+Select `Maven` under `Add new configuration`.
 In the `Command line` field, put `liberty:dev`. In the `Name` field, put `Develop start`.
 For the `Working directory` field, select the path or navigate to the `start` directory. 
 
 Finally, click the `+` button at the upper left in the `Run/Debug Configurations` pop up window. 
-Select `Maven` in `Add new configuration`. 
+Select `Maven` under `Add new configuration`. 
 In the `Command line` field, put `liberty:stop`. In the `Name` field, put `Stop start`. 
 For the `Working directory` field, select the path or navigate to the `start` directory. 
 
@@ -136,7 +136,7 @@ You are expected to see `Context Root Not Found`.
 
 == Configuring the server
 
-On the top left hand side of the screen, expand the `guide-{projectid}` project and navigate to the `start` directory to begin.
+Select `View` in the menu bar and navigate to `Tool Windows` and click `Project` to show up the `Project Tool Window` at top left side. Expand the `guide-{projectid}` project and navigate to the `start` directory to begin.
 
 To get the service running, the Open Liberty server needs to be correctly configured.
 
