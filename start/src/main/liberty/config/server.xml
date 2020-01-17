@@ -1,9 +1,9 @@
 <server description="Intro IntelliJ REST Guide Liberty server">
 
-  <featureManager>
-      <feature>jaxrs-2.1</feature>
-  </featureManager>
+    <featureManager>
+        <feature>jaxrs-2.1</feature>
+    </featureManager>
 
-  <webApplication location="guide-IntelliJ.war"/>
+    <webApplication location="guide-intellij.war"/>
 
 </server>
