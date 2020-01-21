@@ -75,23 +75,35 @@ From the menu bar, select `Run` and click `Edit Configurations`.
 
 Click the `+` button at the upper left in the `Run/Debug Configurations` pop up window. 
 Select `Maven` under `Add new configuration`.
+
 In the `Name` field, put `Run finish`. 
+
 For the `Working directory` field, navigate to the `finish` directory.
+
 In the `Command line` field, put `liberty:run`.
 
 Next, repeact the above steps using the following values in the corresponding fields:
+
 `Name` field: `Stop finish`
+
 `Working directory` field: navigate to the `finish` directory
+
 `Command line` field: `liberty:stop`.
 
 Run through the steps again using the following values in the corresponding fields:
+
 `Name` field: `Develop start`
+
 `Working directory` field: navigate to the `start` directory
+
 `Command line` field: `liberty:dev`.
 
 One last time, using the following values in the corresponding fields:
+
 `Name` field: `Stop start`
+
 `Working directory` field: navigate to the `start` directory
+
 `Command line` field: `liberty:stop`.
 
 You can also use the icons on the toolbar to toggle quickly between the different configurations that were set up
