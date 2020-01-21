@@ -39,29 +39,25 @@ This service will display the JVM's system properties. The REST service will res
 This guide is similar to https://openliberty.io/guides/rest-intro.html#creating-the-jax-rs-resource[Creating a RESTful
  web service].
 
-== Additional prerequisites
+== Additional prerequisite
 
-- *IntelliJ:* For installation instructions of IntelliJ, refer to the official https://www.jetbrains.com/idea/download/[IntelliJ download documentation^]. The version of this guide use is `IntelliJ IDEA 2019.3.1`.
-
-Learn basic setup and features in https://www.jetbrains.com/idea/documentation/[IntelliJ official documentation^].
-
-- *JDK:* Install https://adoptopenjdk.net/?variant=openjdk8&jvmVariant=openj9/[Java 8 JDK^]. The version of JDK is `OpenJDK 8 (LTS)` and JVM is `OpenJ9`.
+- *IntelliJ:* For installation instructions of IntelliJ, refer to the official https://www.jetbrains.com/idea/download/[IntelliJ download documentation^].
 
 == Getting started
 
-Start IntelliJ, select `Get from Version Control` and paste the following in the `URL` field:
+The fastest way to work through this guide is to clone the Git repository and use the projects that are provided inside:
 
 [role='command']
 ```
 https://github.com/OpenLiberty/guide-intellij.git
-```
 
-Select `Clone`.
+cd guide-intellij
+```
 
 Make a note of the directory path that the project is being cloned to.
 
-When prompted if you would like to create a project, select `Yes`. On the `Import Project` dialog box, choose `Import
-project from external model`, select `Maven` and click `Finish`.
+Start IntelliJ, select `Import Project`. On the `Import Project` dialog box, choose `Import
+project from external model` and navigate to the directory that the project was saved, select `Maven` and click `Finish`.
 
 Click `Open` on the welcome screen and navigate to the directory that the project was saved and select `Open`. 
 Select `View` in the menu bar and navigate to `Tool Windows` and click `Project` to show up the `Project Tool Window` at top left side. Expand the `guide-{projectid}` project.
@@ -79,25 +75,25 @@ From the menu bar, select `Run` and click `Edit Configurations`.
 
 Click the `+` button at the upper left in the `Run/Debug Configurations` pop up window. 
 Select `Maven` under `Add new configuration`.
-In the `Command line` field, put `liberty:run`. In the `Name` field, put `Run finish`.
+In the `Name` field, put `Run finish`. In the `Command line` field, put `liberty:run`.
 For the `Working directory` field, select the path or navigate to the `finish` directory. 
+
+Fill out the `Name`, `Working directory` and `Command Line` field in order from top to bottom.
 
 Next, click the `+` button at the upper left in the `Run/Debug Configurations` pop up window. 
 Select `Maven` under `Add new configuration`. 
-In the `Command line` field, put `liberty:stop`. In the `Name` field, put `Stop finish`.
+In the `Name` field, put `Stop finish`. In the `Command line` field, put `liberty:stop`.
 For the `Working directory` field, select the path or navigate to the `finish` directory. 
 
 Once again, click the `+` button at the upper left in the `Run/Debug Configurations` pop up window. 
 Select `Maven` under `Add new configuration`.
-In the `Command line` field, put `liberty:dev`. In the `Name` field, put `Develop start`.
+In the `Name` field, put `Develop start`. In the `Command line` field, put `liberty:dev`.
 For the `Working directory` field, select the path or navigate to the `start` directory. 
 
 Finally, click the `+` button at the upper left in the `Run/Debug Configurations` pop up window. 
 Select `Maven` under `Add new configuration`. 
-In the `Command line` field, put `liberty:stop`. In the `Name` field, put `Stop start`. 
+In the `Name` field, put `Stop start`. In the `Command line` field, put `liberty:stop`.
 For the `Working directory` field, select the path or navigate to the `start` directory. 
-
-Click `OK` to save changes.
 
 You can also use the icons on the toolbar to toggle quickly between the different configurations that were set up
 previously.
@@ -106,7 +102,9 @@ For both `start` and `finish` project, you are supposed to configure the SDK.
 
 From the menu bar, select `File` and click `Project Structure`. On the panel on the left, locate the `Project Settings` section and select `Project`.
 
-In the `Project SDK` section, click `New`, choose `JDK` and specify the path to the `Java 8 JDK` downloaded on your computer.
+In the `Project SDK` section, click `New`, choose `JDK` and specify the path to the it.
+
+Click `OK` to save changes.
 
 == Try what you'll build
 
@@ -122,9 +120,9 @@ http://localhost:9080/LibertyProject/System/properties[^] URL.
 
 You are expected to see the system properties with the format of JSON Strings.
 
-Select `Run` in the menu bar and click `Run...` and then select `Stop finish` in the pop up window.
+To stop the application, select `Run` in the menu bar and click `Run...` and then select `Stop finish` in the pop up window.
 
-== Starting the application
+== Developing the microserivce
 
 Select `Run` in the menu bar and click `Run...`. Select `Develop start` in the pop up window which will start the
 Open Liberty server in development mode and will listen for file changes.
