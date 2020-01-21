@@ -36,7 +36,7 @@ You'll learn how to get started with IntelliJ by building and testing a simple R
 This service will display the JVM's system properties. The REST service will respond to `GET` requests made to the
 `\http://localhost:9080/LibertyProject/System/properties` URL.
 
-This guide is similar to https://openliberty.io/guides/rest-intro.html#creating-the-jax-rs-resource[Creating a RESTful
+This guide is similar to https://openliberty.io/guides/rest-intro.html[Creating a RESTful
  web service].
 
 == Additional prerequisite
@@ -60,13 +60,13 @@ Start IntelliJ, select `Import Project`. On the `Import Project` dialog box, cho
 project from external model` and navigate to the directory that the project was saved, select `Maven` and click `Finish`.
 
 Click `Open` on the welcome screen and navigate to the directory that the project was saved and select `Open`. 
-Select `View` in the menu bar and navigate to `Tool Windows` and click `Project` to show up the `Project Tool Window` at top left side. Expand the `guide-{projectid}` project.
+Select `View` in the menu bar and navigate to `Tool Windows` and click `Project` to display the `Project Tool Window` at top left side. Expand the `guide-{projectid}` project.
 
 The `start` directory contains the starting project that you will build upon.
 
 The `finish` directory contains the finished project that you will build.
 
-At the lower right of the IDE, click `Terminal` to open the console if needed. By default, it should start
+At the lower left of the IDE, click `Terminal` to open the console if needed. By default, it should start
 in the `guide-{projectid}` directory.
 
 == Configure the build project
@@ -75,30 +75,29 @@ From the menu bar, select `Run` and click `Edit Configurations`.
 
 Click the `+` button at the upper left in the `Run/Debug Configurations` pop up window. 
 Select `Maven` under `Add new configuration`.
-In the `Name` field, put `Run finish`. In the `Command line` field, put `liberty:run`.
-For the `Working directory` field, select the path or navigate to the `finish` directory. 
+In the `Name` field, put `Run finish`. 
+For the `Working directory` field, navigate to the `finish` directory.
+In the `Command line` field, put `liberty:run`.
 
-Fill out the `Name`, `Working directory` and `Command Line` field in order from top to bottom.
+Next, repeact the above steps using the following values in the corresponding fields:
+`Name` field: `Stop finish`
+`Working directory` field: navigate to the `finish` directory
+`Command line` field: `liberty:stop`.
 
-Next, click the `+` button at the upper left in the `Run/Debug Configurations` pop up window. 
-Select `Maven` under `Add new configuration`. 
-In the `Name` field, put `Stop finish`. In the `Command line` field, put `liberty:stop`.
-For the `Working directory` field, select the path or navigate to the `finish` directory. 
+Run through the steps again using the following values in the corresponding fields:
+`Name` field: `Develop start`
+`Working directory` field: navigate to the `start` directory
+`Command line` field: `liberty:dev`.
 
-Once again, click the `+` button at the upper left in the `Run/Debug Configurations` pop up window. 
-Select `Maven` under `Add new configuration`.
-In the `Name` field, put `Develop start`. In the `Command line` field, put `liberty:dev`.
-For the `Working directory` field, select the path or navigate to the `start` directory. 
-
-Finally, click the `+` button at the upper left in the `Run/Debug Configurations` pop up window. 
-Select `Maven` under `Add new configuration`. 
-In the `Name` field, put `Stop start`. In the `Command line` field, put `liberty:stop`.
-For the `Working directory` field, select the path or navigate to the `start` directory. 
+One last time, using the following values in the corresponding fields:
+`Name` field: `Stop start`
+`Working directory` field: navigate to the `start` directory
+`Command line` field: `liberty:stop`.
 
 You can also use the icons on the toolbar to toggle quickly between the different configurations that were set up
 previously.
 
-For both `start` and `finish` project, you are supposed to configure the SDK.
+The `SDK` should be configured for both the `start` and `finish` projects.
 
 From the menu bar, select `File` and click `Project Structure`. On the panel on the left, locate the `Project Settings` section and select `Project`.
 
@@ -113,12 +112,12 @@ The `finish` directory in the root of this guide contains the finished applicati
 To try out the application, you can select `Run` in the menu bar and click `Run...`. Select `Run finish`
 in the pop up window and deploy it to Open Liberty.
 
-The tool window will be activated by default displaying a console which allows you to follow the progress of the build.
+The tool window will be activated by default, displaying a console which allows you to follow the progress of the build.
 
-Try look at the console out for the `Run finish`. If the following statement `"CWWKF0011I: The defaultServer server is ready to run a smarter planet. The defaultServer server started in 6.228 seconds."` shows in the console, check out the service at the
+Look at the console out for the `Run finish` command. If the following statement `"CWWKF0011I: The defaultServer server is ready to run a smarter planet. The defaultServer server started in 6.228 seconds."` shows in the console, check out the service at the
 http://localhost:9080/LibertyProject/System/properties[^] URL.
 
-You are expected to see the system properties with the format of JSON Strings.
+You are expected to see the system properties displayed in JSON format.
 
 To stop the application, select `Run` in the menu bar and click `Run...` and then select `Stop finish` in the pop up window.
 
@@ -134,7 +133,7 @@ You are expected to see `Context Root Not Found`.
 
 == Configuring the server
 
-Select `View` in the menu bar and navigate to `Tool Windows` and click `Project` to show up the `Project Tool Window` at top left side. Expand the `guide-{projectid}` project and navigate to the `start` directory to begin.
+If the `Project Tool Window` is not currently displayed, select `View` in the menu bar and navigate to `Tool Windows` and click `Project` to display the `Project Tool Window` at top left side. Expand the `guide-{projectid}` project and navigate to the `start` directory to begin.
 
 To get the service running, the Open Liberty server needs to be correctly configured.
 
@@ -150,13 +149,13 @@ server.xml
 include::finish/src/main/liberty/config/server.xml[]
 ----
 
-The Open Liberty server was started in development mode at the beginning of the guide and all the
+The Open Liberty server was started in development mode in the previous section and all the
 changes were automatically picked up.
 
 Check out the service at the
 http://localhost:9080/LibertyProject/System/properties[^] URL.
 
-You are expected to see the system properties with the format of JSON Strings.
+You are expected to see the system properties displayed in JSON format.
 
 == Debugging the microservice
 
@@ -164,15 +163,15 @@ You may want to debug the program. After you run `Develop start` you can attach 
 process.
 
 From the menu bar, select `Run` and click `Edit Configurations`. Click the `+` button at the upper left in the
-`Run/Debug Configurations` pop up window. Select `Remote` in `Add new configuration`. Type `7777` into
-the `Port` field and `Check` in the `Name` field. Click `OK` to save the changes. Select `Run` from the menu bar and click `Debug...`. Select `Check` in the pop-up window to start the debugger.
+`Run/Debug Configurations` pop up window. Select `Remote` in `Add new configuration`. Type `Check` in the `Name` field and `7777` into the `Port` field. Click `OK` to save the changes. Select `Run` from the menu bar and click `Debug...`. Select `Check` in the pop-up window to start the debugger.
 
 In the editor open the class `PropertiesResource` which is located in the `start/src/main/java/io/openliberty/guides/rest` directory. 
 Click in the margin on line `34`, which is `return System.getProperties();`. This action will set a breakpoint on that line.
 
 Now refresh the browser at the http://localhost:9080/LibertyProject/System/properties[^] URL. The server will stop at
-the breakpoint you set and you can examine the state of your JVM. Select `Run` in the menu bar and click `Resume Program` to continue testing your
-application.
+the breakpoint you set and you can examine the state of your JVM. Select `Run` in the menu bar and click `Resume Program` to continue testing your application.
+
+Remove the breakpoint you set after debugging.
 
 == Testing the microservice
 
@@ -182,7 +181,7 @@ approach because they trigger a failure if a change introduces a bug. JUnit and 
 API provide a simple environment to test the application.
 
 You can write tests for the individual units of code outside of a running application server, or they
-can be written to call the application server directly. In this example, you will create a test that
+can be written to call the application server directly. In this example, you will run a test that
 does the latter.
 
 EndpointIT.java
@@ -196,8 +195,7 @@ The test method is indicated with the [hotspot=test file=0]`@Test` annotation.
 
 === Running the tests
 
-Since you started Open Liberty in development mode at the start of the guide, press
-`enter/return` key to run the tests. You will see the following output:
+Since you started Open Liberty in development mode earlier in the guide, at the bottom left of the tool bar, navigate to the `Run` window and select the tab for `Develop start`. Press `enter/return` key to run the tests. You will see the following output:
 
 [source,role="no_copy"]
 ----
@@ -212,8 +210,7 @@ Results :
 Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
 ----
 
-To see whether the tests detect a failure, add an assertion that you know fails, or change the existing
-assertion to a constant value that doesn't match the `os.name` system property.
+To see whether the tests detect a failure, add an [hotspot=assertequals file=0]`assertion` that you know fails, or change the existing [hotspot=assertosname file=0]`assertion` to a constant value that doesn't match the `os.name` system property.
 
 When you are done checking out the service, exit development mode by selecting `Run` in the menu bar and clicking
 `Run...` and then selecting `Stop start` in the pop up window. Alternatively, type `q` in the shell session where
