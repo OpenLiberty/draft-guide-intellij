@@ -71,49 +71,42 @@ in the `guide-{projectid}` directory.
 
 == Configure the build project
 
-From the menu bar, select `Run` and click `Edit Configurations`. 
+From the menu bar, select `Run` and click `Edit Configurations`.
 
 Click the `+` button at the upper left in the `Run/Debug Configurations` pop up window. 
 Select `Maven` under `Add new configuration`.
 
-In the `Name` field, put `Run finish`. 
+* In the `Name` field, put `Run finish`.
+* For the `Working directory` field, navigate to the `finish` directory.
+* In the `Command line` field, put `liberty:run`.
 
-For the `Working directory` field, navigate to the `finish` directory.
+Next, repeat the above steps using the following values in the corresponding fields:
 
-In the `Command line` field, put `liberty:run`.
-
-Next, repeact the above steps using the following values in the corresponding fields:
-
-`Name` field: `Stop finish`
-
-`Working directory` field: navigate to the `finish` directory
-
-`Command line` field: `liberty:stop`.
+* `Name` field: `Stop finish`
+* `Working directory` field: navigate to the `finish` directory
+* `Command line` field: `liberty:stop`.
 
 Run through the steps again using the following values in the corresponding fields:
 
-`Name` field: `Develop start`
+* `Name` field: `Develop start`
+* `Working directory` field: navigate to the `start` directory
+* `Command line` field: `liberty:dev`.
 
-`Working directory` field: navigate to the `start` directory
+Repeat one last time, using the following values in the corresponding fields:
 
-`Command line` field: `liberty:dev`.
+* `Name` field: `Stop start`
+* `Working directory` field: navigate to the `start` directory
+* `Command line` field: `liberty:stop`.
 
-One last time, using the following values in the corresponding fields:
+Once the configurations are set up, the drop down menu in the topscreen toolbar can be used to quickly select different configurations to run.
 
-`Name` field: `Stop start`
-
-`Working directory` field: navigate to the `start` directory
-
-`Command line` field: `liberty:stop`.
-
-You can also use the icons on the toolbar to toggle quickly between the different configurations that were set up
-previously.
+=== Setting up the SDK
 
 The `SDK` should be configured for both the `start` and `finish` projects.
 
 From the menu bar, select `File` and click `Project Structure`. On the panel on the left, locate the `Project Settings` section and select `Project`.
 
-In the `Project SDK` section, click `New`, choose `JDK` and specify the path to the it.
+In the `Project SDK` section, click `New`, choose `JDK` and specify the path to the JDK set up on your machine.
 
 Click `OK` to save changes.
 
@@ -207,7 +200,7 @@ The test method is indicated with the [hotspot=test file=0]`@Test` annotation.
 
 === Running the tests
 
-Since you started Open Liberty in development mode earlier in the guide, at the bottom left of the tool bar, navigate to the `Run` window and select the tab for `Develop start`. Press `enter/return` key to run the tests. You will see the following output:
+Since you started Open Liberty in development mode earlier in the guide, you will be able to run tests with the `enter/return` key. To navigate back to the terminal where development mode is running, select the `Run` tab in the bottom left corner of the IDE, and then select the `Develop start` tab at the top of the terminal window. Press the `enter/return` key to run the tests. You will see the following output:
 
 [source,role="no_copy"]
 ----
