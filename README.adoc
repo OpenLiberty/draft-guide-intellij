@@ -30,7 +30,7 @@ Learn how to use the IntelliJ IDE to develop a microservice with Open Liberty.
 
 == What you'll learn
 
-IntelliJ is a popular integrated development environment created by JetBrains, used primarily for developing programs for the JVM(Java Virtual Machine).
+IntelliJ is a popular integrated development environment (IDE) created by JetBrains, used primarily for developing programs for the Java Virtual Machine (JVM).
 
 You'll learn how to get started with IntelliJ by building and testing a simple REST service.
 This service will display the JVM's system properties. The REST service will respond to `GET` requests made to the
