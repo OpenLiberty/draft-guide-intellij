@@ -30,7 +30,7 @@ Learn how to use the IntelliJ IDE to develop a microservice with Open Liberty.
 
 == What you'll learn
 
-IntelliJ is an integrated development environment written in Java for developing computer software.
+IntelliJ is a popular integrated development environment created by JetBrains, used primarily for developing programs for the JVM(Java Virtual Machine).
 
 You'll learn how to get started with IntelliJ by building and testing a simple REST service.
 This service will display the JVM's system properties. The REST service will respond to `GET` requests made to the
@@ -215,7 +215,7 @@ Results :
 Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
 ----
 
-To see whether the tests detect a failure, add an [hotspot=assertequals file=0]`assertion` that you know fails, or change the existing [hotspot=assertosname file=0]`assertion` to a constant value that doesn't match the `os.name` system property.
+To see whether the tests detect a failure, add an assertion that you know fails, or change the existing [hotspot=assertosname file=0]`assertion` to a constant value that doesn't match the `os.name` system property.
 
 When you are done checking out the service, exit development mode by selecting `Run` in the menu bar and clicking
 `Run...` and then selecting `Stop start` in the pop up window. Alternatively, type `q` in the shell session where
