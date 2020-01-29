@@ -12,40 +12,40 @@
 :page-releasedate: 2020-01-23
 :page-essential: true
 :page-essential-order: 1
-:page-description: Learn how to create a REST service with Open Liberty with IntelliJ.
-:page-seo-title: Using IntelliJ to develop a microservice
-:page-seo-description: A tutorial on how to use IntelliJ IDE to develop a microservice with Open Liberty
+:page-description: Learn how to create a REST service with Open Liberty with IntelliJ IDEA.
+:page-seo-title: Using IntelliJ IDEA to develop a microservice
+:page-seo-description: A tutorial on how to use IntelliJ IDEA to develop a microservice with Open Liberty
 :guide-author: Open Liberty
 :page-tags: ['MicroProfile', 'Java EE', 'Jakarta EE', 'Maven']
 :page-related-guides: ['rest-client-java', 'rest-client-angularjs', 'rest-intro']
 :page-permalink: /guides/{projectid}
 :repo-description: Go to the https://openliberty.io/guides/{projectid}.html[website] for the rendered version of the guide.
 :common-includes: https://raw.githubusercontent.com/OpenLiberty/guides-common/master
-= Using IntelliJ to develop a microservice
+= Using IntelliJ IDEA to develop a microservice
 
 [.hidden]
 NOTE: This repository contains the guide documentation source. To view the guide in published form, view it on the https://openliberty.io/guides/{projectid}.html[Open Liberty website].
 
-Learn how to use the IntelliJ IDE to develop a microservice with Open Liberty.
+Learn how to use the IntelliJ IDEA to develop a microservice with Open Liberty.
 
 == What you'll learn
 
-IntelliJ is a popular integrated development environment (IDE) created by JetBrains, used primarily for developing programs for the Java Virtual Machine (JVM).
+IntelliJ IDEA is a popular integrated development environment (IDE) created by JetBrains, used primarily for developing programs for the Java Virtual Machine (JVM).
 
-You'll learn how to get started with IntelliJ by building and testing a simple REST service.
+You'll learn how to get started with IntelliJ IDEA by building and testing a simple REST service.
 This service will display the JVM's system properties. The REST service will respond to `GET` requests made to the
 `\http://localhost:9080/LibertyProject/System/properties` URL.
 
 This guide is similar to https://openliberty.io/guides/rest-intro.html[Creating a RESTful
- web service].
+ web service^].
 
 == Additional prerequisite
 
-- *IntelliJ:* For installation instructions of IntelliJ, refer to the official https://www.jetbrains.com/idea/download/[IntelliJ download documentation^].
+- *IntelliJ IDEA:* Install IntelliJ IDEA if you did not. For installation instructions of IntelliJ IDEA, refer to the official https://www.jetbrains.com/idea/download/[IntelliJ IDEA download documentation^].
 
 == Getting started
 
-The fastest way to work through this guide is to clone the Git repository and use the projects that are provided inside:
+The fastest way to work through this guide is to clone the Git repository and use the projects that are provided inside: 
 
 [role='command']
 ```
@@ -56,10 +56,10 @@ cd guide-intellij
 
 Make a note of the directory path that the project is being cloned to.
 
-Start IntelliJ, select `Import Project`. On the `Import Project` dialog box, choose `Import
+Start IntelliJ IDEA, select `Import Project`. On the `Import Project` dialog box, choose `Import
 project from external model` and navigate to the directory that the project was saved, select `Maven` and click `Finish`.
 
-Click `Open` on the welcome screen and navigate to the directory that the project was saved and select `Open`. 
+If the directory is not automatically open, click `Open` on the welcome screen and navigate to the directory mentioned previously and select `Open`. 
 Select `View` in the menu bar and navigate to `Tool Windows` and click `Project` to display the `Project Tool Window` at top left side. Expand the `guide-{projectid}` project.
 
 The `start` directory contains the starting project that you will build upon.
@@ -154,6 +154,8 @@ server.xml
 include::finish/src/main/liberty/config/server.xml[]
 ----
 
+`HttpEndpoint` is added in the replaced file to connect to the liberty server.
+
 The Open Liberty server was started in development mode in the previous section and all the
 changes were automatically picked up.
 
@@ -164,14 +166,20 @@ You are expected to see the system properties displayed in JSON format.
 
 == Debugging the microservice
 
-You may want to debug the program. After you run `Develop start` you can attach the IntelliJ debugger to the Open Liberty
+You may want to debug the program. After you run `Develop start` you can attach the IntelliJ IDEA debugger to the Open Liberty
 process.
 
 From the menu bar, select `Run` and click `Edit Configurations`. Click the `+` button at the upper left in the
 `Run/Debug Configurations` pop up window. Select `Remote` in `Add new configuration`. Type `Check` in the `Name` field and `7777` into the `Port` field. Click `OK` to save the changes. Select `Run` from the menu bar and click `Debug...`. Select `Check` in the pop-up window to start the debugger.
 
+PropertiesResource.java
+[source, Java, linenums, role="code_column hide_tags=comment"]
+----
+include::start/src/main/java/io/openliberty/guides/rest/PropertiesResource.java[]
+----
+
 In the editor open the class `PropertiesResource` which is located in the `start/src/main/java/io/openliberty/guides/rest` directory. 
-Click in the margin on line `34`, which is `return System.getProperties();`. This action will set a breakpoint on that line.
+Click in the margin on line [hotspot=returnProperty file=0]`34`. This action will set a breakpoint on that line.
 
 Now refresh the browser at the http://localhost:9080/LibertyProject/System/properties[^] URL. The server will stop at
 the breakpoint you set and you can examine the state of your JVM. Select `Run` in the menu bar and click `Resume Program` to continue testing your application.
@@ -186,8 +194,7 @@ approach because they trigger a failure if a change introduces a bug. JUnit and 
 API provide a simple environment to test the application.
 
 You can write tests for the individual units of code outside of a running application server, or they
-can be written to call the application server directly. In this example, you will run a test that
-does the latter.
+can be written to call the application server directly.
 
 EndpointIT.java
 [source, Java, linenums, role="code_column hide_tags=comment"]
@@ -195,7 +202,7 @@ EndpointIT.java
 include::finish/src/test/java/it/io/openliberty/guides/rest/EndpointIT.java[]
 ----
 
-This test class has more lines of code than the resource implementation. This situation is common.
+The test EndpointIT class is already provided for you to test the REST service. This test class has more lines of code than the resource implementation. This situation is common.
 The test method is indicated with the [hotspot=test file=0]`@Test` annotation.
 
 === Running the tests
@@ -218,12 +225,11 @@ Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
 To see whether the tests detect a failure, add an assertion that you know fails, or change the existing [hotspot=assertosname file=0]`assertion` to a constant value that doesn't match the `os.name` system property.
 
 When you are done checking out the service, exit development mode by selecting `Run` in the menu bar and clicking
-`Run...` and then selecting `Stop start` in the pop up window. Alternatively, type `q` in the shell session where
-you ran the server and then press the `enter/return` key.
+`Run...` and then selecting `Stop start` in the pop up window. Alternatively, type `q` in the terminal where development mode is running and then press the `enter/return` key.
 
 == Great work! You're done!
 
-You developed a REST service in Open Liberty using IntelliJ.
+You developed a REST service in Open Liberty using IntelliJ IDEA.
 
 == Related Links
 
