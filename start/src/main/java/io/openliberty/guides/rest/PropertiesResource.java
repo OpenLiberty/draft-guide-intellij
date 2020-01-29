@@ -31,7 +31,9 @@ public class PropertiesResource {
     @Produces(MediaType.APPLICATION_JSON)
     // end::produces[]
     public Properties getProperties() {
+        // tag::returnProperty[]
         return System.getProperties();
+        // end::returnProperty[]
     }
 
 }
