@@ -10,7 +10,7 @@
 :page-layout: guide-multipane
 :page-duration: 30 minutes
 :page-releasedate: 2020-02-23
-:page-description: Learn how to create a REST service with Open Liberty with IntelliJ IDEA.
+:page-description: Learn how to use the IntelliJ IDEA to develop a microservice with Open Liberty.
 :page-seo-title: Using IntelliJ IDEA to develop a microservice
 :page-seo-description: A tutorial on how to use IntelliJ IDEA to develop a microservice with Open Liberty
 :guide-author: Open Liberty
