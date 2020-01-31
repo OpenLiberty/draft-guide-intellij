@@ -1,4 +1,4 @@
-//  Copyright (c) 2019 IBM Corporation and others.
+//  Copyright (c) 2020 IBM Corporation and others.
 // Licensed under Creative Commons Attribution-NoDerivatives
 // 4.0 International (CC BY-ND 4.0)
 //   https://creativecommons.org/licenses/by-nd/4.0/
@@ -9,9 +9,7 @@
 :projectid: intellij
 :page-layout: guide-multipane
 :page-duration: 30 minutes
-:page-releasedate: 2020-01-23
-:page-essential: true
-:page-essential-order: 1
+:page-releasedate: 2020-02-23
 :page-description: Learn how to create a REST service with Open Liberty with IntelliJ IDEA.
 :page-seo-title: Using IntelliJ IDEA to develop a microservice
 :page-seo-description: A tutorial on how to use IntelliJ IDEA to develop a microservice with Open Liberty
@@ -36,7 +34,7 @@ You'll learn how to get started with IntelliJ IDEA by building and testing a sim
 This service will display the JVM's system properties. The REST service will respond to `GET` requests made to the
 `\http://localhost:9080/LibertyProject/System/properties` URL.
 
-This guide is similar to https://openliberty.io/guides/rest-intro.html[Creating a RESTful
+To learn more about how to create a REST service, see https://openliberty.io/guides/rest-intro.html[Creating a RESTful
  web service^].
 
 == Additional prerequisite
