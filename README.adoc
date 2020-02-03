@@ -154,7 +154,15 @@ server.xml
 include::finish/src/main/liberty/config/server.xml[]
 ----
 
+pom.xml
+[source,xml,linenums,role="code_column"]
+----
+include::finish/pom.xml[]
+----
+
 [hotspot=httpEndpoint file=0]`<HttpEndpoint/>` and [hotspot=webApplication file=0]`contextRoot` is added in the replaced file to connect to the liberty server.
+
+The context root value [hotspot=appContextRoot file=0]`contextRoot` is defined at the `pom.xml`.
 
 The Open Liberty server was started in development mode in the previous section and all the
 changes were automatically picked up.
