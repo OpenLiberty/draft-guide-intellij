@@ -47,18 +47,16 @@ The fastest way to work through this guide is to clone the Git repository and us
 
 [role='command']
 ```
-https://github.com/OpenLiberty/guide-intellij.git
+git clone https://github.com/OpenLiberty/guide-intellij.git
 
 cd guide-intellij
 ```
 
 Make a note of the directory path that the project is being cloned to.
 
-Start IntelliJ IDEA, select `Import Project`. On the `Import Project` dialog box, choose `Import
-project from external model` and navigate to the directory that the project was saved, select `Maven` and click `Finish`.
+Start IntelliJ IDEA, select `Import Project`. Navigate to the directory that the project was saved and click `Open`. On the `Import Project` dialog box, choose `Import project from external model` and select `Maven` and click `Finish`.
 
-If the directory is not automatically open, click `Open` on the welcome screen and navigate to the directory mentioned previously and select `Open`. 
-Select `View` in the menu bar and navigate to `Tool Windows` and click `Project` to display the `Project Tool Window` at top left side. Expand the `guide-{projectid}` project.
+If the directory is not automatically open, click `Open` on the welcome screen and navigate to the directory mentioned previously and select `Open`. Select `View` in the menu bar and navigate to `Tool Windows` and click `Project` to display the `Project Tool Window` at top left side. Choose `Project Files` in the dropdown menu and expand the `guide-{projectid}` project. 
 
 The `start` directory contains the starting project that you will build upon.
 
@@ -136,7 +134,7 @@ You are expected to see `Context Root Not Found`.
 
 == Configuring the server
 
-If the `Project Tool Window` is not currently displayed, select `View` in the menu bar and navigate to `Tool Windows` and click `Project` to display the `Project Tool Window` at top left side. Expand the `guide-{projectid}` project and navigate to the `start` directory to begin.
+If the `Project Tool Window` is not currently displayed, select `View` in the menu bar and navigate to `Tool Windows` and click `Project` to display the `Project Tool Window` at top left side. Choose `Project Files` in the dropdown menu, expand the `guide-{projectid}` project and navigate to the `start` directory to begin.
 
 To get the service running, the Open Liberty server needs to be correctly configured.
 
@@ -208,7 +206,7 @@ EndpointIT.java
 include::finish/src/test/java/it/io/openliberty/guides/rest/EndpointIT.java[]
 ----
 
-The test EndpointIT class is already provided for you to test the REST service. This test class has more lines of code than the resource implementation. This situation is common.
+The test [hotspot=endpointTest file=0]`EndpointIT` class is already provided for you to test the REST service. This test class has more lines of code than the resource implementation. This situation is common.
 The test method is indicated with the [hotspot=test file=0]`@Test` annotation.
 
 === Running the tests
