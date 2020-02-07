@@ -31,10 +31,10 @@ public class PropertiesResource {
     @Produces(MediaType.APPLICATION_JSON)
     // end::produces[]
     public Properties getProperties() {
+        // tag::getProperty[]
         Properties props = System.getProperties();
-        // tag::returnProperty[]
+        // end::getProperty[]
         return props;
-        // end::returnProperty[]
     }
 
 }

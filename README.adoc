@@ -56,7 +56,7 @@ Make a note of the directory path that the project is being cloned to.
 
 Start IntelliJ IDEA, select `Import Project`. Navigate to the directory that the project was saved and click `Open`. On the `Import Project` dialog box, choose `Import project from external model` and select `Maven` and click `Finish`.
 
-If the directory is not automatically open, click `Open` on the welcome screen and navigate to the directory mentioned previously and select `Open`. Select `View` in the menu bar and navigate to `Tool Windows` and click `Project` to display the `Project Tool Window` at top left side. Choose `Project Files` in the dropdown menu and expand the `guide-{projectid}` project. 
+If the directory is not automatically open, click `Open` on the welcome screen and navigate to the directory mentioned previously and select `Open`. Select `View` in the menu bar and navigate to `Tool Windows` and click `Project` to display the `Project Tool Window` at top left side. Expand the `guide-{projectid}` project. If there is no guide directory showed up in the top left side, try reopen the IntelliJ IDEA.
 
 The `start` directory contains the starting project that you will build upon.
 
@@ -134,7 +134,7 @@ You are expected to see `Context Root Not Found`.
 
 == Configuring the server
 
-If the `Project Tool Window` is not currently displayed, select `View` in the menu bar and navigate to `Tool Windows` and click `Project` to display the `Project Tool Window` at top left side. Choose `Project Files` in the dropdown menu, expand the `guide-{projectid}` project and navigate to the `start` directory to begin.
+If the `Project Tool Window` is not currently displayed, select `View` in the menu bar and navigate to `Tool Windows` and click `Project` to display the `Project Tool Window` at top left side. Expand the `guide-{projectid}` project and navigate to the `start` directory to begin. If there is no guide directory showed up in the top left side, try reopen the IntelliJ IDEA.
 
 To get the service running, the Open Liberty server needs to be correctly configured.
 
@@ -183,7 +183,7 @@ include::start/src/main/java/io/openliberty/guides/rest/PropertiesResource.java[
 ----
 
 In the editor open the class `PropertiesResource` which is located in the `start/src/main/java/io/openliberty/guides/rest` directory. 
-Click in the margin on line [hotspot=returnProperty file=0]`34`. This action will set a breakpoint on that line.
+Click in the margin on line [hotspot=getProperty file=0]`35`. This action will set a breakpoint on that line.
 
 Now refresh the browser at the http://localhost:9080/LibertyProject/System/properties[^] URL. The server will stop at
 the breakpoint you set and you can examine the state of your JVM. Select `Run` in the menu bar and click `Resume Program` to continue testing your application.
