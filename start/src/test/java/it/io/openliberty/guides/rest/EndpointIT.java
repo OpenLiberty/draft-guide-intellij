@@ -25,7 +25,9 @@ import javax.ws.rs.core.Response;
 
 import org.junit.Test;
 
+// tag::endpointTest[]
 public class EndpointIT {
+// end::endpointTest[]
     
     private static final Jsonb jsonb = JsonbBuilder.create();
 
