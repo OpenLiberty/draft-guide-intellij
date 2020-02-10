@@ -54,9 +54,9 @@ cd guide-intellij
 
 Make a note of the directory path that the project is being cloned to.
 
-Start IntelliJ IDEA, select `Import Project`. Navigate to the directory that the project was saved and click `Open`. On the `Import Project` dialog box, choose `Import project from external model` and select `Maven` and click `Finish`.
+Start IntelliJ IDEA, select `Import Project`. Navigate to the directory where the project was saved and click `Open`. On the `Import Project` dialog box, choose `Import project from external model` and select `Maven` and click `Finish`.
 
-If the directory is not automatically open, click `Open` on the welcome screen and navigate to the directory mentioned previously and select `Open`. Select `View` in the menu bar and navigate to `Tool Windows` and click `Project` to display the `Project Tool Window` at top left side. Expand the `guide-{projectid}` project. If there is no guide directory showed up in the top left side, try reopen the IntelliJ IDEA.
+If the directory is not automatically open, click `Open` on the welcome screen and navigate to the directory mentioned previously and select `Open`. Select `View` in the menu bar and navigate to `Tool Windows` and click `Project` to display the `Project Tool Window` at top left side. Expand the `guide-{projectid}` project. If there is no guide directory showed up in the top left side, try to reopen the IntelliJ IDEA.
 
 The `start` directory contains the starting project that you will build upon.
 
@@ -134,7 +134,7 @@ You are expected to see `Context Root Not Found`.
 
 == Configuring the server
 
-If the `Project Tool Window` is not currently displayed, select `View` in the menu bar and navigate to `Tool Windows` and click `Project` to display the `Project Tool Window` at top left side. Expand the `guide-{projectid}` project and navigate to the `start` directory to begin. If there is no guide directory showed up in the top left side, try reopen the IntelliJ IDEA.
+If the `Project Tool Window` is not currently displayed, select `View` in the menu bar and navigate to `Tool Windows` and click `Project` to display the `Project Tool Window` at top left side. Expand the `guide-{projectid}` project and navigate to the `start` directory to begin. If there is no guide directory showed up in the top left side, try to reopen the IntelliJ IDEA.
 
 To get the service running, the Open Liberty server needs to be correctly configured.
 
@@ -158,7 +158,7 @@ include::finish/pom.xml[]
 
 [hotspot=httpEndpoint file=0]`<HttpEndpoint/>` and [hotspot=webApplication file=0]`contextRoot` is added in the replaced file to connect to the liberty server.
 
-The context root value [hotspot=appContextRoot file=0]`context root` is defined at the `pom.xml`.
+The context root value [hotspot=appContextRoot file=1]`context root` is defined at the `pom.xml`.
 
 The Open Liberty server was started in development mode in the previous section and all the
 changes were automatically picked up.
