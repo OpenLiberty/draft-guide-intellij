@@ -11,8 +11,8 @@
 :page-duration: 30 minutes
 :page-releasedate: 2020-02-23
 :page-description: Learn how to use the IntelliJ IDEA to develop a microservice with Open Liberty.
-:page-seo-title: Using IntelliJ IDEA to develop a microservice
-:page-seo-description: A tutorial on how to use IntelliJ IDEA to develop a microservice with Open Liberty
+:page-seo-title: Using IntelliJ IDEA to develop a RESTful Java microservice
+:page-seo-description: A getting started tutorial with examples on how to use IntelliJ IDEA to develop a RESTful Java microservice with Open Liberty
 :guide-author: Open Liberty
 :page-tags: ['MicroProfile', 'Java EE', 'Jakarta EE', 'Maven']
 :page-related-guides: ['rest-client-java', 'rest-client-angularjs', 'rest-intro']
