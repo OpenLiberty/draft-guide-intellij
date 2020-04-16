@@ -9,10 +9,10 @@
  * Contributors:
  *     IBM Corporation - initial API and implementation
  *******************************************************************************/
- // end::comment[]
+// end::comment[]
 package it.io.openliberty.guides.rest;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.Properties;
 
@@ -23,9 +23,11 @@ import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.Response;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
+// tag::endpointTest[]
 public class EndpointIT {
+// end::endpointTest[]
     
     private static final Jsonb jsonb = JsonbBuilder.create();
 
@@ -51,8 +53,7 @@ public class EndpointIT {
         // end::requestget[]
 
         // tag::assertequals[]
-        assertEquals("Incorrect response code from " + url, 
-                     Response.Status.OK.getStatusCode(), response.getStatus());
+        assertEquals( Response.Status.OK.getStatusCode(), response.getStatus(), "Incorrect response code from " + url);
         // end::assertequals[]
 
         // tag::body[]
@@ -60,9 +61,8 @@ public class EndpointIT {
         Properties sysProps = jsonb.fromJson(json, Properties.class);
 
         // tag::assertosname[]
-        assertEquals("The system property for the local and remote JVM should match",
-                     System.getProperty("os.name"),
-                     sysProps.getProperty("os.name"));
+        assertEquals(System.getProperty("os.name"),
+        sysProps.getProperty("os.name"), "The system property for the local and remote JVM should match");
         // end::assertosname[]
         // end::body[]
         response.close();
