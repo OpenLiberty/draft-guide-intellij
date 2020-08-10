@@ -54,7 +54,9 @@ cd guide-intellij
 
 Make a note of the directory path that the project is being cloned to.
 
-Start IntelliJ IDEA, select `Import Project`. Navigate to the directory where the project was saved and click `Open`. On the `Import Project` dialog box, choose `Import project from external model` and select `Maven` and click `Finish`.
+Start IntelliJ IDEA, select `Import Project`. Navigate to the `finish` directory where the project was saved and click `Open`. On the `Import Project` dialog box, choose `Import project from external model` and select `Maven` and click `Finish`.
+
+Start a new window of IntelliJ IDEA, select `Import Project`. Navigate to the `start` directory where the project was saved and click `Open`. On the `Import Project` dialog box, choose `Import project from external model` and select `Maven` and click `Finish`.
 
 If the directory is not automatically open, click `Open` on the welcome screen and navigate to the directory mentioned previously and select `Open`. Select `View` in the menu bar and navigate to `Tool Windows` and click `Project` to display the `Project Tool Window` at top left side. Expand the `guide-{projectid}` project. If there is no guide directory showed up in the top left side, try to reopen the IntelliJ IDEA.
 
@@ -67,34 +69,13 @@ in the `guide-{projectid}` directory.
 
 == Configure the build project
 
-From the menu bar, select `Run` and click `Edit Configurations`.
+Search for _Open Liberty Tools_ in IntelliJ **Settings > Plugins > Marketplace** and click the Install button.
 
-Click the `+` button at the upper left in the `Run/Debug Configurations` pop up window. 
-Select `Maven` under `Add new configuration`.
+The extension will detect your Liberty Maven project if it detects the `io.openliberty.tools:liberty-maven-plugin` in the `pom.xml`.
 
-* In the `Name` field, put `Run finish`.
-* For the `Working directory` field, navigate to the `finish` directory.
-* In the `Command line` field, put `liberty:run`.
+If Open Liberty support the project, it will appear in the `Liberty Dev Dashboard` on the right side bar.
 
-Next, repeat the above steps using the following values in the corresponding fields:
-
-* `Name` field: `Stop finish`
-* `Working directory` field: navigate to the `finish` directory
-* `Command line` field: `liberty:stop`.
-
-Run through the steps again using the following values in the corresponding fields:
-
-* `Name` field: `Develop start`
-* `Working directory` field: navigate to the `start` directory
-* `Command line` field: `liberty:dev`.
-
-Repeat one last time, using the following values in the corresponding fields:
-
-* `Name` field: `Stop start`
-* `Working directory` field: navigate to the `start` directory
-* `Command line` field: `liberty:stop`.
-
-Once the configurations are set up, the drop down menu in the topscreen toolbar can be used to quickly select different configurations to run.
+Click a project in the `Liberty Dev Dashboard` to view the available commands.
 
 === Setting up the SDK
 
@@ -110,22 +91,19 @@ Click `OK` to save changes.
 
 The `finish` directory in the root of this guide contains the finished application. Give it a try before you proceed.
 
-To try out the application, you can select `Run` in the menu bar and click `Run...`. Select `Run finish`
-in the pop up window and deploy it to Open Liberty.
+To try out the application, you can expand the `Liberty Dev Dashboard` in the right panel and click the green `Run` button. Select `guide-intellij` in the pop up window and click `OK`. After that, select `Start` in the drop-down list and start the dev mode.
 
 The tool window will be activated by default, displaying a console which allows you to follow the progress of the build.
 
-Look at the console out for the `Run finish` command. If the following statement `"CWWKF0011I: The defaultServer server is ready to run a smarter planet. The defaultServer server started in 6.228 seconds."` shows in the console, check out the service at the
-http://localhost:9080/LibertyProject/System/properties[^] URL.
-
 You are expected to see the system properties displayed in JSON format.
 
-To stop the application, select `Run` in the menu bar and click `Run...` and then select `Stop finish` in the pop up window.
+To stop the application, click the green `Run` button in the right panel of `Liberty Dev Dashboard`. Select `guide-intellij` in the pop up window and click `OK`. After that, select `Stop` in the drop-down list and stop the dev mode.
 
 == Developing the microserivce
 
-Select `Run` in the menu bar and click `Run...`. Select `Develop start` in the pop up window which will start the
-Open Liberty server in development mode and will listen for file changes.
+Open the project in the `start` project that has been imported before.
+
+Expand the `Liberty Dev Dashboard` in the right panel and click the green `Run` button. Select `guide-intellij` in the pop up window and click `OK`. After that, select `Start` in the drop-down list and start the dev mode.
 
 Check out the service at the
 http://localhost:9080/LibertyProject/System/properties[^] URL.
@@ -211,7 +189,7 @@ The test method is indicated with the [hotspot=test file=0]`@Test` annotation.
 
 === Running the tests
 
-Since you started Open Liberty in development mode earlier in the guide, you will be able to run tests with the `enter/return` key. To navigate back to the terminal where development mode is running, select the `Run` tab in the bottom left corner of the IDE, and then select the `Develop start` tab at the top of the terminal window. Press the `enter/return` key to run the tests. You will see the following output:
+To run the test, click the green `Run` button in the right panel of `Liberty Dev Dashboard`. Double click `Run Tests` in the drop down menu. You will see the following output:
 
 [source,role="no_copy"]
 ----
@@ -228,8 +206,7 @@ Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
 
 To see whether the tests detect a failure, add an assertion that you know fails, or change the existing [hotspot=assertosname file=0]`assertion` to a constant value that doesn't match the `os.name` system property.
 
-When you are done checking out the service, exit development mode by selecting `Run` in the menu bar and clicking
-`Run...` and then selecting `Stop start` in the pop up window. Alternatively, type `q` in the terminal where development mode is running and then press the `enter/return` key.
+When you are done checking out the service, exit development mode by expanding the `Liberty Dev Dashboard` in the right panel and click the green `Run` button. Select `guide-intellij` in the pop up window and click `OK`. After that, select `Start` in the drop-down list and start the dev mode.
 
 == Great work! You're done!
 
