@@ -30,7 +30,7 @@ Learn how to use the IntelliJ IDEA to develop a microservice with Open Liberty.
 
 IntelliJ IDEA is a popular integrated development environment (IDE) created by JetBrains, used primarily for developing programs for the Java Virtual Machine (JVM).
 
-You'll learn how to get started with IntelliJ IDEA by building and testing a simple REST service.
+You'll learn how to get started with IntelliJ IDEA by building and testing a simple REST service with Open Liberty Tools for IntelliJ.
 This service will display the JVM's system properties. The REST service will respond to `GET` requests made to the
 `\http://localhost:9080/LibertyProject/System/properties` URL.
 
