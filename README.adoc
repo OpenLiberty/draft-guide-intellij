@@ -91,6 +91,8 @@ Click `OK` to save changes.
 
 The `finish` directory in the root of this guide contains the finished application. Give it a try before you proceed.
 
+Open the project in the `finish` project that has been imported before.
+
 To try out the application, you can expand the `Liberty Dev Dashboard` in the right panel and click the green `Run` button. Select `guide-intellij` in the pop up window and click `OK`. After that, select `Start` in the drop-down list and start the dev mode.
 
 The tool window will be activated by default, displaying a console which allows you to follow the progress of the build.
@@ -189,7 +191,7 @@ The test method is indicated with the [hotspot=test file=0]`@Test` annotation.
 
 === Running the tests
 
-To run the test, click the green `Run` button in the right panel of `Liberty Dev Dashboard`. Double click `Run Tests` in the drop down menu. You will see the following output:
+To run the test, click the green `Run` button in the right panel of `Liberty Dev Dashboard`. Double click `Run Tests` in the drop down menu. You will see the following output in the terminal:
 
 [source,role="no_copy"]
 ----
@@ -206,7 +208,7 @@ Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
 
 To see whether the tests detect a failure, add an assertion that you know fails, or change the existing [hotspot=assertosname file=0]`assertion` to a constant value that doesn't match the `os.name` system property.
 
-When you are done checking out the service, exit development mode by expanding the `Liberty Dev Dashboard` in the right panel and click the green `Run` button. Select `guide-intellij` in the pop up window and click `OK`. After that, select `Start` in the drop-down list and start the dev mode.
+When you are done checking out the service, exit development mode by expanding the `Liberty Dev Dashboard` in the right panel and click the green `Run` button. Select `guide-intellij` in the pop up window and click `OK`. After that, select `Stop` in the drop-down list and stop the dev mode.
 
 == Great work! You're done!
 
