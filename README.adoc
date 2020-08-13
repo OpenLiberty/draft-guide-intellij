@@ -11,8 +11,8 @@
 :page-duration: 30 minutes
 :page-releasedate: 2020-02-23
 :page-description: Learn how to use the IntelliJ IDEA to develop a microservice with Open Liberty.
-:page-seo-title: Using IntelliJ IDEA to develop a RESTful Java microservice
-:page-seo-description: A getting started tutorial with examples on how to use IntelliJ IDEA to develop a RESTful Java microservice with Open Liberty
+:page-seo-title: Using IntelliJ IDEA with the Open Liberty Tools extension to develop a RESTful Java microservice
+:page-seo-description: A getting started tutorial with examples on how to use IntelliJ IDEA with the Open Liberty Tools extension to develop a RESTful Java microservice with Open Liberty
 :guide-author: Open Liberty
 :page-tags: ['MicroProfile', 'Java EE', 'Jakarta EE', 'Maven']
 :page-related-guides: ['rest-client-java', 'rest-client-angularjs', 'rest-intro']
@@ -24,7 +24,49 @@
 [.hidden]
 NOTE: This repository contains the guide documentation source. To view the guide in published form, view it on the https://openliberty.io/guides/{projectid}.html[Open Liberty website].
 
-Learn how to use the IntelliJ IDEA to develop a microservice with Open Liberty.
+Learn how to use the IntelliJ IDEA with the Open Liberty Tools extension to develop a microservice with Open Liberty.
+
+## Project Description
+
+### What you’ll learn
+Introduce IntelliJ and use Open Liberty Tools with Intellij to build and test a simple REST service.
+
+### Additional prerequisite
+Installation instructions of IntelliJ IDEA
+
+### Getting started
+
+Clone the repository and use start and finish directory to run the project.
+
+### Importing project to Intellij IDE
+
+Create a Liberty project, the start directoy should have the basic application (rest intro guide), ask users to import the maven project from the start directory
+
+### Developing the microsevice
+
+1. Start the dev mode.
+1. Create class(es) or update class(es) -> java
+1. Updating the context root of the microservice -> configuration
+
+### Running the application
+
+Run the application and check the result.
+
+### Debugging the microservice
+
+Debug the program. After you run `Develop start` you can attach the IntelliJ IDEA debugger to the Open Liberty process.
+
+### Testing the microservice
+
+1. Use Open Liberty Tools for Intellij to test the application
+1. Use Open Liberty Tools for Intellij to stop the application after the testing.
+
+### What's the next
+Developing Gradle project with libertyDev task of the Liberty Gradle Plugin.
+
+### Brief description of application
+
+Create system service from the rest intro guide
 
 == What you'll learn
 
