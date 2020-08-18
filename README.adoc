@@ -28,6 +28,8 @@ Learn how to use the IntelliJ IDEA with the Open Liberty Tools extension to deve
 
 ## Project Description
 
+Note: This section is for design purpose and it would be removed after the review.
+
 ### What you’ll learn
 Introduce IntelliJ and use Open Liberty Tools with Intellij to build and test a simple REST service.
 
@@ -40,13 +42,24 @@ Clone the repository and use start and finish directory to run the project.
 
 ### Importing project to Intellij IDE
 
-Create a Liberty project, the start directoy should have the basic application (rest intro guide), ask users to import the maven project from the start directory
+Option 1: Create a Liberty project, the start directoy should have the basic application (rest intro guide), ask users to import the maven project and gradle project from the start directory.
+
+Option 2: Use the intellij plugin of https://start.microprofile.io/[Microprofile Starter]. Ask user to install microprofile starter and generate microProfile maven project.
 
 ### Developing the microsevice
 
+Option 1:
+
 1. Start the dev mode.
-1. Create class(es) or update class(es) -> java
+1. Create and update both Maven project and Gradle project from the start directory.
 1. Updating the context root of the microservice -> configuration
+
+Try creating both gradle settings and `pom.xml` in the start directory.
+
+Option 2:
+
+1. Start the dev mode.
+1. Updateing the context root of the microservice -> configuration
 
 ### Running the application
 
