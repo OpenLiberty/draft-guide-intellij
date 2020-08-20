@@ -10,21 +10,21 @@
 :page-layout: guide-multipane
 :page-duration: 30 minutes
 :page-releasedate: 2020-08-28
-:page-description: Learn how to use the IntelliJ IDEA to develop a microservice with Open Liberty.
-:page-seo-title: Using IntelliJ IDEA with the Open Liberty Tools extension to develop a RESTful Java microservice
-:page-seo-description: A getting started tutorial with examples on how to use IntelliJ IDEA with the Open Liberty Tools extension to develop a RESTful Java microservice with Open Liberty
+:page-description: Learn how to use IntelliJ IDEA to develop a microservice with Open Liberty.
+:page-seo-title: Developing Java microservices with Open Liberty using IntelliJ IDEA
+:page-seo-description: A getting started tutorial with examples on how to use the IntelliJ IDEA integrated development environment (IDE) with the Open Liberty Tools plugin to develop Java microservices with Open Liberty.
 :guide-author: Open Liberty
-:page-tags: ['MicroProfile', 'Java EE', 'Jakarta EE', 'Maven']
-:page-related-guides: ['rest-client-java', 'rest-client-angularjs', 'rest-intro']
+:page-tags: []
+:page-related-guides: ['rest-client-java', 'rest-intro']
 :page-permalink: /guides/{projectid}
 :repo-description: Go to the https://openliberty.io/guides/{projectid}.html[website] for the rendered version of the guide.
 :common-includes: https://raw.githubusercontent.com/OpenLiberty/guides-common/master
-= Using IntelliJ IDEA to develop a microservice
+= Developing Java microservices with Open Liberty using IntelliJ IDEA
 
 [.hidden]
 NOTE: This repository contains the guide documentation source. To view the guide in published form, view it on the https://openliberty.io/guides/{projectid}.html[Open Liberty website].
 
-Learn how to use the IntelliJ IDEA with the Open Liberty Tools extension to develop a microservice with Open Liberty.
+Learn how to develop Java microservices with Open Liberty using IntelliJ IDEA with the Open Liberty Tools plugin
 
 ## Design Review
 
@@ -32,7 +32,7 @@ NOTE: This section is for design review purpose and it will be removed after the
 Please review the title, desciption, SEO metadata, and the following outlines.
 
 ### What you’ll learn
-- Introduce IntelliJ and Open Liberty Tools with Intellij 
+- Introduce IntelliJ IDEA and Open Liberty Tools plugin
 - Users will build and test a simple REST service by using them
 
 ### Additional prerequisite
@@ -278,15 +278,7 @@ When you are done checking out the service, exit development mode by selecting `
 
 == Great work! You're done!
 
-You developed a REST service in Open Liberty using IntelliJ IDEA.
-
-== Related Links
-
-Learn more about MicroProfile.
-
-https://microprofile.io/[See the MicroProfile specs^]
-
-https://openliberty.io/docs/ref/microprofile[View the MicroProfile API^]
+You developed a Java microservice in Open Liberty using IntelliJ IDEA.
 
 
 include::{common-includes}/attribution.adoc[subs="attributes"]
