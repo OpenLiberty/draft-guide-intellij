@@ -33,7 +33,7 @@ Please review the title, desciption, SEO metadata, and the following outlines.
 
 ### What you’ll learn
 - Introduce IntelliJ IDEA and Open Liberty Tools plugin
-- Users will build and test a simple REST service by using them
+- Learn how to build and test a simple REST service using Intellij.
 
 ### Additional prerequisite
 - Installation instructions of IntelliJ IDEA
