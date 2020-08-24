@@ -42,10 +42,10 @@ Please review the title, desciption, SEO metadata, and the following outlines.
 - Clone the repository and use start and finish directory to run the project.
 
 ### Importing project to Intellij IDE
-1. Proposal One: 
-  - Create a Liberty project
-  - the start directoy should have the basic application (from the rest intro guide)
-  - ask users to import the maven project and gradle project from the start directory
+
+- Create a Liberty project
+- the start directoy should have the basic application (from the rest intro guide)
+- ask users to import the maven project and gradle project from the start directorye
 
 ### Developing the microsevice
 - Start the dev mode.
