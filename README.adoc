@@ -47,10 +47,6 @@ Please review the title, desciption, SEO metadata, and the following outlines.
   - the start directoy should have the basic application (from the rest intro guide)
   - ask users to import the maven project and gradle project from the start directory
 
-2. Proposal Two: 
-  - Use the intellij plugin of https://start.microprofile.io/[Microprofile Starter]
-  - Ask users to install microprofile starter and generate microProfile maven project
-
 ### Developing the microsevice
 - Start the dev mode.
 - Update/Write the application.
